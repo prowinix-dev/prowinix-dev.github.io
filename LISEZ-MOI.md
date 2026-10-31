@@ -55,9 +55,15 @@ Double-clique sur `index.html` : il s'ouvre dans ton navigateur.
 - Le CV se modifie dans le dossier `Documents\CV-Winix` : change le texte dans `cv.html`, puis clic droit sur `fabriquer-cv.ps1` > « Exécuter avec PowerShell ». Les PDF sont refaits.
 - Les versions **avec ton numéro** (à envoyer directement aux recruteurs) sont dans `Documents\CV-Winix`. Ne les mets pas dans ce dossier.
 
-## Mettre en ligne gratuitement (GitHub Pages)
+## Le portfolio en ligne
 
-1. Crée un compte sur github.com.
-2. Crée un dépôt public nommé `ton-pseudo.github.io`.
-3. Envoie le contenu de ce dossier dans le dépôt.
-4. Le site est en ligne à l'adresse `https://ton-pseudo.github.io`, 24 h/24, même ordinateur éteint.
+- Adresse : **https://prowinix-dev.github.io** (version anglaise : `https://prowinix-dev.github.io/?lang=en`).
+- Hébergé gratuitement par GitHub Pages, sur le dépôt `prowinix-dev/prowinix-dev.github.io`. Il reste en ligne 24 h/24, même ordinateur éteint.
+
+## Mettre à jour le site après une modification
+
+1. Modifie les fichiers de ce dossier.
+2. Double-clique sur **`publier`**.
+3. Le site en ligne est à jour 1 à 2 minutes plus tard (actualise la page avec Ctrl + F5).
+
+Les fichiers listés dans `.gitignore` (ancienne photo, etc.) restent sur l'ordinateur et ne sont jamais publiés.
