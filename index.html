@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gérard Wilfried BIHINA · Développeur web, réseaux & IA</title>
+  <meta name="description" content="Portfolio de Gérard Wilfried BIHINA (Winix), développeur web, technicien maintenance et administrateur réseau à Yaoundé, Cameroun. Créateur de NOVAIA et du réseau Wi-Fi Sharingan.">
+  <meta name="author" content="Gérard Wilfried BIHINA">
+  <meta property="og:title" content="Gérard Wilfried BIHINA · Développeur web, réseaux & IA">
+  <meta property="og:description" content="L'informatique n'est pas seulement ma passion, c'est mon univers.">
+  <meta property="og:image" content="https://prowinix-dev.github.io/images/apercu-partage.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:url" content="https://prowinix-dev.github.io/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://prowinix-dev.github.io/">
+  <meta name="theme-color" content="#060a14">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="lien-evitement" href="#contenu" data-i18n="evitement">Aller au contenu</a>
+  <div class="progression" aria-hidden="true"></div>
+  <div class="fond" aria-hidden="true">
+    <span class="orbe orbe-1"></span>
+    <span class="orbe orbe-2"></span>
+    <span class="orbe orbe-3"></span>
+    <span class="grille"></span>
+  </div>
+  <div class="halo-souris" aria-hidden="true"></div>
+
+  <!-- ========== NAVIGATION ========== -->
+  <header class="entete">
+    <nav class="nav conteneur" data-i18n-attr="aria-label:nav-aria" aria-label="Navigation principale">
+      <a href="#accueil" class="logo" data-i18n-attr="aria-label:logo-aria" aria-label="Retour en haut">
+        <span class="logo-marque">W</span><span class="logo-texte">winix<span class="point">.</span></span>
+      </a>
+      <div class="nav-droite">
+        <ul id="menu" class="menu">
+          <li><a href="#apropos" data-i18n="nav-apropos">À propos</a></li>
+          <li><a href="#competences" data-i18n="nav-competences">Compétences</a></li>
+          <li><a href="#projets" data-i18n="nav-projets">Projets</a></li>
+          <li><a href="#parcours" data-i18n="nav-parcours">Parcours</a></li>
+          <li><a href="#contact" class="bouton bouton-petit" data-i18n="nav-contact">Me contacter</a></li>
+        </ul>
+        <button class="langue" type="button" data-i18n-attr="aria-label:langue-aria" aria-label="Read in English">
+          <span class="langue-fr">FR</span><span class="langue-en">EN</span>
+        </button>
+        <button class="burger" data-i18n-attr="aria-label:menu-ouvrir" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="contenu">
+    <!-- ========== ACCUEIL ========== -->
+    <section id="accueil" class="hero conteneur">
+      <div class="hero-texte">
+        <p class="badge-dispo apparait"><span class="pastille"></span> <span data-i18n="dispo">Disponible pour un stage ou un emploi</span></p>
+        <p class="hero-bonjour apparait" data-i18n="bonjour">Bonjour, je suis</p>
+        <h1 class="hero-nom apparait">Gérard Wilfried <span class="degrade">BIHINA</span></h1>
+        <p class="hero-role apparait" aria-live="polite">
+          <span class="chevron">&gt;</span> <span class="role-tape"
+            data-roles-fr='["Développeur web","Technicien maintenance informatique","Administrateur réseau","Passionné d&apos;intelligence artificielle"]'
+            data-roles-en='["Web developer","IT maintenance technician","Network administrator","Artificial intelligence enthusiast"]'>Développeur web</span><span class="curseur" aria-hidden="true">_</span>
+        </p>
+        <p class="hero-phrase apparait" data-i18n="phrase">
+          L'informatique n'est pas seulement ma passion, <strong>c'est mon univers</strong> : j'aime comprendre, créer,
+          innover et transformer chaque idée en une solution capable de faire avancer le monde.
+        </p>
+        <div class="hero-actions apparait">
+          <a href="#projets" class="bouton"><span data-i18n="voir-projets">Voir mes projets</span> <span aria-hidden="true">→</span></a>
+          <a href="cv/CV-Wilfried-BIHINA.pdf" class="bouton bouton-contour" download data-i18n-attr="href:cv-lien"><span aria-hidden="true">⬇</span> <span data-i18n="cv-telecharger">Télécharger mon CV</span></a>
+        </div>
+        <ul class="hero-infos apparait">
+          <li><span aria-hidden="true">📍</span> <span data-i18n="lieu">Yaoundé, Cameroun</span></li>
+          <li><span aria-hidden="true">🗣️</span> Français · English · Español</li>
+        </ul>
+      </div>
+
+      <div class="hero-visuel apparait">
+        <div class="cadre-photo">
+          <span class="anneau" aria-hidden="true"></span>
+          <img src="images/wilfried.jpg" data-i18n-attr="alt:photo-alt" alt="Portrait de Gérard Wilfried BIHINA" width="720" height="720" class="photo">
+        </div>
+        <span class="etiquette-flottante e1"><span aria-hidden="true">&lt;/&gt;</span> Web</span>
+        <span class="etiquette-flottante e2"><span aria-hidden="true">🛰️</span> Cisco CCNA</span>
+        <span class="etiquette-flottante e3"><span aria-hidden="true">🧠</span> <span data-i18n="ia">IA</span></span>
+        <span class="etiquette-flottante e4"><span aria-hidden="true">🛠️</span> CompTIA A+</span>
+      </div>
+
+      <a href="#chiffres" class="defiler" data-i18n-attr="aria-label:descendre" aria-label="Descendre"><span></span></a>
+    </section>
+
+    <!-- ========== CHIFFRES ========== -->
+    <section id="chiffres" class="chiffres conteneur">
+      <div class="chiffre revele"><strong data-compte="4">0</strong><span data-i18n="chiffre-certifs">certifications internationales</span></div>
+      <div class="chiffre revele"><strong data-compte="2">0</strong><span data-i18n="chiffre-projets">projets concrets en production</span></div>
+      <div class="chiffre revele"><strong data-compte="7400" data-suffixe="+">0</strong><span data-i18n="chiffre-lignes">lignes de code pour NOVAIA</span></div>
+      <div class="chiffre revele"><strong data-compte="169">0</strong><span data-i18n="chiffre-tests">tests automatiques qui passent</span></div>
+    </section>
+
+    <!-- ========== À PROPOS ========== -->
+    <section id="apropos" class="section conteneur">
+      <header class="titre-section revele">
+        <p class="sur-titre" data-i18n="apropos-sur">01 · À propos</p>
+        <h2 data-i18n="apropos-titre">Un informaticien <span class="degrade">complet</span>, du câble au code</h2>
+      </header>
+      <div class="apropos">
+        <div class="apropos-texte revele">
+          <p data-i18n="apropos-p1">
+            Formé à l'<strong>IAI Cameroun</strong> (Institut Africain d'Informatique), je couvre toute la chaîne
+            informatique : je construis des <strong>sites et applications web</strong>, je <strong>dépanne et entretiens</strong>
+            ordinateurs et appareils, et je <strong>configure et diagnostique les réseaux</strong>.
+          </p>
+          <p data-i18n="apropos-p2">
+            Ce qui m'anime, c'est de comprendre comment les choses fonctionnent pour en créer de nouvelles. C'est ainsi que
+            sont nés <strong>NOVAIA</strong>, mon assistant personnel intelligent, et <strong>Sharingan</strong>, le réseau
+            Wi-Fi que j'ai déployé dans mon quartier de Nkoabang.
+          </p>
+          <p data-i18n="apropos-p3">
+            Je recherche un <strong>stage ou un emploi</strong> dans une entreprise technologique, une startup, une agence web
+            ou une entreprise de services informatiques, où je pourrai apporter mon énergie et continuer à grandir.
+          </p>
+        </div>
+        <ul class="valeurs">
+          <li class="valeur revele">
+            <span class="valeur-icone" aria-hidden="true">🔍</span>
+            <div><h3 data-i18n="val1-titre">Comprendre</h3><p data-i18n="val1">Aller au fond des choses : pourquoi un bug, une panne ou un réseau se comporte ainsi.</p></div>
+          </li>
+          <li class="valeur revele">
+            <span class="valeur-icone" aria-hidden="true">⚙️</span>
+            <div><h3 data-i18n="val2-titre">Créer</h3><p data-i18n="val2">Transformer une idée en un produit concret, testé et agréable à utiliser.</p></div>
+          </li>
+          <li class="valeur revele">
+            <span class="valeur-icone" aria-hidden="true">🚀</span>
+            <div><h3 data-i18n="val3-titre">Innover</h3><p data-i18n="val3">Utiliser l'intelligence artificielle et les nouvelles technologies pour faire avancer les choses.</p></div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="coulisses">
+        <h3 class="coulisses-titre revele" data-i18n="coulisses-titre">En coulisses</h3>
+        <div class="grille-coulisses">
+          <figure class="revele">
+            <button class="zoom" data-zoom><img src="images/coulisses-bureau.jpg" data-i18n-attr="alt:coul1-alt" alt="Wilfried au travail à son bureau, casque sur les oreilles" width="720" height="960" loading="lazy"></button>
+            <figcaption data-i18n="coul1">Concentré sur un projet</figcaption>
+          </figure>
+          <figure class="revele">
+            <button class="zoom" data-zoom><img src="images/coulisses-poste.jpg" data-i18n-attr="alt:coul2-alt" alt="Poste de travail avec ordinateur portable, routeurs et points d'accès" width="720" height="960" loading="lazy"></button>
+            <figcaption data-i18n="coul2">Mon poste : ordinateur, routeurs et points d'accès</figcaption>
+          </figure>
+          <figure class="revele">
+            <button class="zoom" data-zoom><img src="images/coulisses-code.jpg" data-i18n-attr="alt:coul3-alt" alt="Wilfried en train de coder, avec des livres de Java et de web design" width="720" height="862" loading="lazy"></button>
+            <figcaption data-i18n="coul3">Code et lectures : Java, web design…</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== COMPÉTENCES ========== -->
+    <section id="competences" class="section conteneur">
+      <header class="titre-section revele">
+        <p class="sur-titre" data-i18n="comp-sur">02 · Compétences</p>
+        <h2 data-i18n="comp-titre">Quatre domaines, <span class="degrade">une seule passion</span></h2>
+      </header>
+      <div class="grille-competences">
+        <article class="carte-comp revele inclinable">
+          <div class="carte-comp-icone" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M8 6 2 12l6 6M16 6l6 6-6 6M14 4l-4 16"/></svg>
+          </div>
+          <h3 data-i18n="comp1-titre">Développement web</h3>
+          <p data-i18n="comp1">Des interfaces modernes, rapides et adaptées au téléphone, et le serveur qui va avec.</p>
+          <ul class="puces"><li>HTML5</li><li>CSS3</li><li>JavaScript</li><li>Node.js</li><li>Express</li><li>SQLite</li><li>Git</li><li>Responsive</li></ul>
+        </article>
+        <article class="carte-comp revele inclinable">
+          <div class="carte-comp-icone" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4M7 9l2 2-2 2M12 13h4"/></svg>
+          </div>
+          <h3 data-i18n="comp2-titre">Systèmes & maintenance</h3>
+          <p data-i18n="comp2">Installation, dépannage et entretien des ordinateurs et appareils, sous Windows et Linux.</p>
+          <ul class="puces"><li>Ubuntu Linux</li><li data-i18n="puce-terminal">Terminal</li><li>Windows</li><li data-i18n="puce-materiel">Matériel</li><li data-i18n="puce-diagnostic">Diagnostic de pannes</li><li>CompTIA A+</li></ul>
+        </article>
+        <article class="carte-comp revele inclinable">
+          <div class="carte-comp-icone" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><rect x="9" y="2" width="6" height="5" rx="1"/><rect x="2" y="17" width="6" height="5" rx="1"/><rect x="16" y="17" width="6" height="5" rx="1"/><path d="M12 7v5M5 17v-3h14v3"/></svg>
+          </div>
+          <h3 data-i18n="comp3-titre">Réseaux</h3>
+          <p data-i18n="comp3">Déploiement, configuration et diagnostic de réseaux, filaires comme Wi-Fi.</p>
+          <ul class="puces"><li>Cisco CCNA</li><li>Wi-Fi</li><li data-i18n="puce-portail">Portail captif</li><li data-i18n="puce-cablage">Câblage RJ45</li><li>Packet Tracer</li><li>TCP/IP</li></ul>
+        </article>
+        <article class="carte-comp revele inclinable">
+          <div class="carte-comp-icone" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M5 19l2-2M17 7l2-2"/><circle cx="12" cy="12" r="4"/></svg>
+          </div>
+          <h3 data-i18n="comp4-titre">IA & innovation</h3>
+          <p data-i18n="comp4">Conception de projets technologiques qui intègrent l'intelligence artificielle.</p>
+          <ul class="puces"><li>IBM AI Engineering</li><li data-i18n="puce-conception">Conception de projets</li><li data-i18n="puce-assistants">Assistants intelligents</li><li>Prompt design</li></ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- ========== PROJETS ========== -->
+    <section id="projets" class="section conteneur">
+      <header class="titre-section revele">
+        <p class="sur-titre" data-i18n="projets-sur">03 · Projets</p>
+        <h2 data-i18n="projets-titre">Des réalisations <span class="degrade">concrètes</span></h2>
+      </header>
+
+      <!-- Projet 1 : NOVAIA -->
+      <article class="bloc-projet">
+        <header class="entete-projet revele">
+          <p class="type-projet" data-i18n="novaia-type">Application web · Projet phare</p>
+          <h3 class="nom-projet"><span class="degrade">NOVAIA</span>, <span data-i18n="novaia-sous">mon assistant personnel intelligent</span></h3>
+          <p class="slogan" data-i18n="novaia-slogan">« Ton assistant. Ta mémoire. Ton identité. Ton contrôle. »</p>
+        </header>
+
+        <div class="projet">
+          <div class="galerie revele">
+            <div class="ecran">
+              <div class="ecran-barre" aria-hidden="true"><span></span><span></span><span></span><em>novaia</em></div>
+              <button class="ecran-image" data-i18n-attr="aria-label:agrandir" aria-label="Agrandir la capture">
+                <img id="capture-principale" src="images/novaia-chat.webp" alt="NOVAIA : une conversation avec l'assistant Nova" width="1920" height="1200">
+              </button>
+            </div>
+            <div class="vignettes" role="tablist" data-i18n-attr="aria-label:vignettes-aria" aria-label="Captures d'écran de NOVAIA">
+              <button class="vignette active" role="tab" aria-selected="true" data-src="images/novaia-chat.webp" data-alt-fr="NOVAIA : une conversation avec l'assistant Nova" data-alt-en="NOVAIA: a conversation with the Nova assistant"><img src="images/novaia-chat.webp" alt="" loading="lazy"><span data-i18n="v-chat">Chat</span></button>
+              <button class="vignette" role="tab" aria-selected="false" data-src="images/novaia-memoire.webp" data-alt-fr="NOVAIA : la mémoire personnelle et les consentements" data-alt-en="NOVAIA: personal memory and consents"><img src="images/novaia-memoire.webp" alt="" loading="lazy"><span data-i18n="v-memoire">Mémoire</span></button>
+              <button class="vignette" role="tab" aria-selected="false" data-src="images/novaia-offre.webp" data-alt-fr="NOVAIA : l'offre Gratuit / Premium" data-alt-en="NOVAIA: Free / Premium plans"><img src="images/novaia-offre.webp" alt="" loading="lazy"><span>Premium</span></button>
+              <button class="vignette" role="tab" aria-selected="false" data-src="images/novaia-admin.webp" data-alt-fr="NOVAIA : le tableau de bord administrateur" data-alt-en="NOVAIA: the admin dashboard"><img src="images/novaia-admin.webp" alt="" loading="lazy"><span>Admin</span></button>
+              <button class="vignette" role="tab" aria-selected="false" data-src="images/novaia-connexion.webp" data-alt-fr="NOVAIA : l'écran de connexion" data-alt-en="NOVAIA: the sign-in screen"><img src="images/novaia-connexion.webp" alt="" loading="lazy"><span data-i18n="v-connexion">Connexion</span></button>
+            </div>
+            <div class="video-demo">
+              <p class="video-titre"><span class="video-pastille" aria-hidden="true">▶</span> <span data-i18n="video-titre">La démo en vidéo · 56 secondes</span></p>
+              <div class="ecran">
+                <div class="ecran-barre" aria-hidden="true"><span></span><span></span><span></span><em>novaia · démo</em></div>
+                <video controls preload="none" playsinline poster="videos/novaia-demo-apercu.jpg" width="1280" height="720" data-i18n-attr="aria-label:video-aria" aria-label="Vidéo de démonstration de NOVAIA">
+                  <source src="videos/novaia-demo.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+          </div>
+
+          <div class="projet-texte">
+            <p class="revele" data-i18n="novaia-p">
+              Une plateforme où chacun possède <strong>son propre assistant</strong> : on lui donne un nom, une personnalité,
+              une langue, et il retient seulement ce qu'on l'autorise à retenir. Conçu en <strong>25 fondations</strong>
+              (mission, identité, sécurité, mémoire, paiements, administration…) puis construit étape par étape.
+            </p>
+            <ul class="fonctions">
+              <li class="revele"><span aria-hidden="true">💬</span> <span data-i18n="f1">Chat avec historique des conversations</span></li>
+              <li class="revele"><span aria-hidden="true">🎭</span> <span data-i18n="f2">Assistant personnalisable (nom, personnalité, langue)</span></li>
+              <li class="revele"><span aria-hidden="true">🧠</span> <span data-i18n="f3">Mémoire avec consentement, catégorie par catégorie</span></li>
+              <li class="revele"><span aria-hidden="true">🛡️</span> <span data-i18n="f4">Modération automatique et masquage des données bancaires</span></li>
+              <li class="revele"><span aria-hidden="true">📎</span> <span data-i18n="f5">Fichiers et images, vérifiés par leur contenu</span></li>
+              <li class="revele"><span aria-hidden="true">⏰</span> <span data-i18n="f6">Rappels en langage naturel (« rappelle-moi demain à 9h… »)</span></li>
+              <li class="revele"><span aria-hidden="true">⭐</span> <span data-i18n="f7">Offre Gratuite / Premium avec abonnement</span></li>
+              <li class="revele"><span aria-hidden="true">📊</span> <span data-i18n="f8">Tableau de bord admin sans accès aux contenus privés</span></li>
+              <li class="revele"><span aria-hidden="true">🔐</span> <span data-i18n="f9">Export des données et suppression du compte (RGPD)</span></li>
+              <li class="revele"><span aria-hidden="true">💾</span> <span data-i18n="f10">Sauvegardes automatiques et restauration</span></li>
+            </ul>
+            <p class="encart revele" data-i18n="novaia-ia">
+              <strong>Où en est l'IA ?</strong> Le moteur d'intelligence artificielle est en cours d'intégration. Toute
+              l'application autour (comptes, mémoire, sécurité, paiements, administration) est terminée et testée.
+            </p>
+            <ul class="puces revele"><li>Node.js</li><li>Express</li><li>SQLite</li><li>JavaScript</li><li>HTML / CSS</li><li>Git</li><li>Cloudflare Tunnel</li></ul>
+          </div>
+        </div>
+
+        <div class="securite">
+          <h4 class="revele" data-i18n="secu-titre">La sécurité, au cœur du projet</h4>
+          <div class="grille-securite">
+            <div class="carte-sec revele"><strong data-i18n="s1-t">Mots de passe hachés</strong><p data-i18n="s1">Algorithme scrypt : même l'administrateur ne peut pas les relire.</p></div>
+            <div class="carte-sec revele"><strong data-i18n="s2-t">Données isolées</strong><p data-i18n="s2">Chaque requête vérifie le propriétaire : personne ne voit les données d'un autre.</p></div>
+            <div class="carte-sec revele"><strong data-i18n="s3-t">Anti-abus</strong><p data-i18n="s3">Limiteur de tentatives, Content-Security-Policy, cookies httpOnly et sécurisés.</p></div>
+            <div class="carte-sec revele"><strong data-i18n="s4-t">Testé automatiquement</strong><p data-i18n="s4">15 fichiers de tests, 169 vérifications, sur une base de données séparée.</p></div>
+          </div>
+        </div>
+        <p class="note-code revele" data-i18n="note-code">Code source présenté sur demande, lors d'un entretien.</p>
+      </article>
+
+      <!-- Projet 2 : Sharingan -->
+      <article class="bloc-projet">
+        <header class="entete-projet revele">
+          <p class="type-projet" data-i18n="sharingan-type">Réseau · Nkoabang, Yaoundé · En service</p>
+          <h3 class="nom-projet"><span class="degrade-rouge">Sharingan</span>, <span data-i18n="sharingan-sous">un réseau Wi-Fi de quartier</span></h3>
+        </header>
+
+        <div class="projet projet-inverse">
+          <div class="projet-texte">
+            <p class="revele" data-i18n="sharingan-p">
+              J'ai déployé <strong>Sharingan</strong>, un réseau Wi-Fi étendu qui apporte Internet aux habitants du quartier de
+              <strong>Nkoabang</strong>. Chacun se connecte par un <strong>portail captif</strong> et choisit le forfait qui lui
+              convient, réglé en FCFA. Un vrai service, utilisé chaque jour par de vrais clients.
+            </p>
+            <ul class="fonctions">
+              <li class="revele"><span aria-hidden="true">📡</span> <span data-i18n="r1">Déploiement et extension de la couverture Wi-Fi dans le quartier</span></li>
+              <li class="revele"><span aria-hidden="true">🔌</span> <span data-i18n="r2">Câblage RJ45 et contrôle de chaque câble au testeur</span></li>
+              <li class="revele"><span aria-hidden="true">🧾</span> <span data-i18n="r3">Portail captif : connexion, forfaits, file d'attente et statut</span></li>
+              <li class="revele"><span aria-hidden="true">⏱️</span> <span data-i18n="r4">6 forfaits : au temps, au volume, par nombre d'appareils, de nuit</span></li>
+              <li class="revele"><span aria-hidden="true">🧪</span> <span data-i18n="r5">Conception et simulation sur Cisco Packet Tracer</span></li>
+              <li class="revele"><span aria-hidden="true">🤝</span> <span data-i18n="r6">Administration du réseau et assistance aux utilisateurs</span></li>
+            </ul>
+            <div class="forfaits revele">
+              <div><strong>150</strong><span data-i18n="fo1">FCFA · 1,5 Go / 24 h</span></div>
+              <div><strong>500</strong><span data-i18n="fo2">FCFA · illimité / 2 h</span></div>
+              <div><strong>600</strong><span data-i18n="fo3">FCFA · nuit 21 h – 6 h</span></div>
+              <div><strong>25 000</strong><span data-i18n="fo4">FCFA · famille, 5 appareils / 30 j</span></div>
+            </div>
+            <ul class="puces revele"><li>Wi-Fi</li><li data-i18n="puce-portail">Portail captif</li><li data-i18n="puce-points">Points d'accès</li><li data-i18n="puce-cablage">Câblage RJ45</li><li>Cisco Packet Tracer</li><li data-i18n="puce-support">Support utilisateurs</li></ul>
+          </div>
+
+          <div class="visuels-reseau revele">
+            <button class="telephone zoom" data-zoom data-i18n-attr="aria-label:agrandir" aria-label="Agrandir la capture">
+              <img src="images/sharingan-portail.jpg" data-i18n-attr="alt:portail-alt" alt="Portail captif Sharingan : la page des forfaits" width="591" height="1080" loading="lazy">
+            </button>
+            <div class="preuves">
+              <figure>
+                <button class="zoom" data-zoom><img src="images/sharingan-forfaits.jpg" data-i18n-attr="alt:forfaits-alt" alt="Forfaits Sharingan : Standard, Premium, Family et Night" width="591" height="920" loading="lazy"></button>
+                <figcaption data-i18n="p1">Les forfaits</figcaption>
+              </figure>
+              <figure>
+                <button class="zoom" data-zoom><img src="images/reseau-testeur-cable.jpg" data-i18n-attr="alt:testeur-alt" alt="Testeur de câbles RJ45 utilisé sur le terrain" width="720" height="960" loading="lazy"></button>
+                <figcaption data-i18n="p2">Test des câbles</figcaption>
+              </figure>
+              <figure>
+                <button class="zoom" data-zoom><img src="images/reseau-packet-tracer.jpg" data-i18n-attr="alt:pt-alt" alt="Maquette du réseau sur Cisco Packet Tracer : switch, point d'accès, serveur, PC et smartphone" width="626" height="720" loading="lazy"></button>
+                <figcaption data-i18n="p3">Maquette Packet Tracer</figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+
+        <div class="video-demo video-sharingan revele">
+          <p class="video-titre"><span class="video-pastille" aria-hidden="true">▶</span> <span data-i18n="video-sharingan-titre">Sharingan en vidéo · 50 secondes</span></p>
+          <div class="ecran">
+            <div class="ecran-barre" aria-hidden="true"><span></span><span></span><span></span><em>sharingan</em></div>
+            <video controls preload="none" playsinline poster="videos/sharingan-demo-apercu.jpg" width="1280" height="720" src="videos/sharingan-demo.mp4" data-i18n-attr="src:video-sharingan-src;aria-label:video-sharingan-aria" aria-label="Vidéo de présentation du réseau Sharingan"></video>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- ========== SERVICES ========== -->
+    <section class="section conteneur">
+      <header class="titre-section revele">
+        <p class="sur-titre" data-i18n="serv-sur">04 · Ce que je peux vous apporter</p>
+        <h2 data-i18n="serv-titre">Disponible pour <span class="degrade">vos besoins</span></h2>
+      </header>
+      <div class="grille-services">
+        <div class="service revele"><span class="numero">01</span><h3 data-i18n="sv1-t">Sites & applications web</h3><p data-i18n="sv1">Vitrines, outils internes, applications sur mesure, adaptés à tous les écrans.</p></div>
+        <div class="service revele"><span class="numero">02</span><h3 data-i18n="sv2-t">Maintenance informatique</h3><p data-i18n="sv2">Installation, dépannage, optimisation et entretien de votre parc informatique.</p></div>
+        <div class="service revele"><span class="numero">03</span><h3 data-i18n="sv3-t">Réseaux & Wi-Fi</h3><p data-i18n="sv3">Mise en place, extension, configuration et diagnostic de réseaux fiables.</p></div>
+        <div class="service revele"><span class="numero">04</span><h3 data-i18n="sv4-t">Projets IA</h3><p data-i18n="sv4">Imaginer et intégrer des fonctions intelligentes dans vos outils.</p></div>
+      </div>
+    </section>
+
+    <!-- ========== PARCOURS ========== -->
+    <section id="parcours" class="section conteneur">
+      <header class="titre-section revele">
+        <p class="sur-titre" data-i18n="parc-sur">05 · Parcours</p>
+        <h2 data-i18n="parc-titre">Formation & <span class="degrade">certifications</span></h2>
+      </header>
+      <ol class="frise">
+        <li class="etape revele">
+          <span class="etape-point" aria-hidden="true"></span>
+          <p class="etape-type" data-i18n="e1-type">Formation · 2022 – 2024</p>
+          <h3>IAI Cameroun</h3>
+          <p data-i18n="e1">Institut Africain d'Informatique : les bases solides du métier d'informaticien.</p>
+        </li>
+        <li class="etape revele">
+          <span class="etape-point" aria-hidden="true"></span>
+          <p class="etape-type">Certification · Cisco</p>
+          <h3 data-i18n="e2-titre">CCNA : Réseaux informatiques</h3>
+          <p data-i18n="e2">Conception, configuration et dépannage des réseaux d'entreprise.</p>
+        </li>
+        <li class="etape revele">
+          <span class="etape-point" aria-hidden="true"></span>
+          <p class="etape-type">Certification · CompTIA</p>
+          <h3 data-i18n="e3-titre">A+ : Maintenance informatique</h3>
+          <p data-i18n="e3">Matériel, systèmes d'exploitation, dépannage et support utilisateur.</p>
+        </li>
+        <li class="etape revele">
+          <span class="etape-point" aria-hidden="true"></span>
+          <p class="etape-type">Certification · Meta</p>
+          <h3>Meta Front-End Developer</h3>
+          <p data-i18n="e4">HTML, CSS, JavaScript, conception d'interfaces et bonnes pratiques du web.</p>
+        </li>
+        <li class="etape revele">
+          <span class="etape-point" aria-hidden="true"></span>
+          <p class="etape-type">Certification · IBM</p>
+          <h3>IBM AI Engineering</h3>
+          <p data-i18n="e5">Fondamentaux de l'intelligence artificielle et de l'apprentissage automatique.</p>
+        </li>
+        <li class="etape etape-reseau revele">
+          <span class="etape-point" aria-hidden="true"></span>
+          <p class="etape-type" data-i18n="e6-type">Projet réseau · Nkoabang · 2025</p>
+          <h3 data-i18n="e6-titre">Déploiement du réseau Wi-Fi Sharingan</h3>
+          <p data-i18n="e6">Un réseau de quartier en service : couverture Wi-Fi, câblage, portail captif et forfaits.</p>
+        </li>
+        <li class="etape etape-projet revele">
+          <span class="etape-point" aria-hidden="true"></span>
+          <p class="etape-type" data-i18n="e7-type">Projet personnel · 2026</p>
+          <h3 data-i18n="e7-titre">Création de NOVAIA</h3>
+          <p data-i18n="e7">De la conception (25 fondations) à la mise en ligne : comptes, mémoire, sécurité, paiements, administration.</p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ========== CONTACT ========== -->
+    <section id="contact" class="section conteneur">
+      <div class="contact revele">
+        <p class="sur-titre" data-i18n="contact-sur">06 · Contact</p>
+        <h2 data-i18n="contact-titre">Travaillons <span class="degrade">ensemble</span></h2>
+        <p class="contact-intro" data-i18n="contact-intro">Un stage, un emploi, un projet ? Écrivez-moi : je réponds rapidement.</p>
+        <div class="contact-cartes">
+          <div class="contact-carte">
+            <span class="contact-icone" aria-hidden="true">✉️</span>
+            <div>
+              <p class="contact-label">E-mail</p>
+              <a href="mailto:prowinix5@gmail.com" class="contact-valeur">prowinix5@gmail.com</a>
+            </div>
+            <button class="copier" data-copie="prowinix5@gmail.com" data-i18n="copier" data-i18n-attr="aria-label:copier-aria" aria-label="Copier l'adresse e-mail">Copier</button>
+          </div>
+          <a class="contact-carte contact-whatsapp" data-wa-fr="Bonjour Wilfried, j'ai vu votre portfolio." data-wa-en="Hello Wilfried, I saw your portfolio." href="https://wa.me/237687473564?text=Bonjour%20Wilfried%2C%20j%27ai%20vu%20votre%20portfolio." target="_blank" rel="noopener">
+            <span class="contact-icone" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.8-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.1.3.7 1.2 1.6 1.9 1.1 1 2 1.3 2.3 1.4.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.3Z"/></svg>
+            </span>
+            <div>
+              <p class="contact-label">WhatsApp</p>
+              <p class="contact-valeur" data-i18n="wa-ecrire">Écrire sur WhatsApp</p>
+            </div>
+            <span class="fleche" aria-hidden="true">↗</span>
+          </a>
+          <a class="contact-carte contact-linkedin" href="https://www.linkedin.com/in/pro-winix-9b2329448" target="_blank" rel="noopener">
+            <span class="contact-icone" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M20.4 2H3.6A1.6 1.6 0 0 0 2 3.6v16.8A1.6 1.6 0 0 0 3.6 22h16.8a1.6 1.6 0 0 0 1.6-1.6V3.6A1.6 1.6 0 0 0 20.4 2ZM8 19H5V9.5h3V19ZM6.5 8.2a1.7 1.7 0 1 1 0-3.5 1.7 1.7 0 0 1 0 3.5ZM19 19h-3v-4.6c0-1.1 0-2.5-1.5-2.5S12.8 13 12.8 14.3V19h-3V9.5h2.8v1.3h.1a3.1 3.1 0 0 1 2.8-1.5c3 0 3.5 2 3.5 4.5V19Z"/></svg>
+            </span>
+            <div>
+              <p class="contact-label">LinkedIn</p>
+              <p class="contact-valeur" data-i18n="linkedin-voir">Voir mon profil</p>
+            </div>
+            <span class="fleche" aria-hidden="true">↗</span>
+          </a>
+          <div class="contact-carte">
+            <span class="contact-icone" aria-hidden="true">📍</span>
+            <div>
+              <p class="contact-label" data-i18n="localisation">Localisation</p>
+              <p class="contact-valeur" data-i18n="lieu">Yaoundé, Cameroun</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pied conteneur">
+    <p>© <span id="annee">2026</span> Gérard Wilfried BIHINA · <span data-i18n="pied">Conçu et codé à Yaoundé</span></p>
+    <p class="pied-liens">
+      <a href="https://www.linkedin.com/in/pro-winix-9b2329448" class="haut" target="_blank" rel="noopener">LinkedIn ↗</a>
+      <a href="https://github.com/prowinix-dev" class="haut" target="_blank" rel="noopener">GitHub ↗</a>
+      <a href="#accueil" class="haut" data-i18n="haut">Retour en haut ↑</a>
+    </p>
+  </footer>
+
+  <!-- Agrandissement des images -->
+  <dialog class="visionneuse" data-i18n-attr="aria-label:visionneuse-aria" aria-label="Image agrandie">
+    <button class="visionneuse-fermer" data-i18n-attr="aria-label:fermer" aria-label="Fermer">×</button>
+    <img src="" alt="">
+  </dialog>
+
+  <div class="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/traductions.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
