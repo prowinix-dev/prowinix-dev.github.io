@@ -4,8 +4,8 @@
 // Le français est écrit directement dans index.html ; ici, seulement l'anglais.
 // Chaque clé correspond à un attribut data-i18n="clé" (texte) ou data-i18n-attr="attribut:clé".
 window.TRADUCTIONS_EN = {
-  'document-titre': 'Gérard Wilfried BIHINA · Web developer, networks & AI',
-  'document-description': 'Portfolio of Gérard Wilfried BIHINA (Winix), web developer, IT maintenance technician and network administrator in Yaoundé, Cameroon. Creator of NOVAIA and the Sharingan Wi-Fi network.',
+  'document-titre': 'Gérard Wilfried BIHINA · Junior Full Stack Developer, networks & AI',
+  'document-description': 'Portfolio of Gérard Wilfried BIHINA (Winix), junior full stack web developer, IT maintenance technician and network administrator in Yaoundé, Cameroon. Creator of NOVAIA and the Sharingan Wi-Fi network.',
 
   // Navigation
   evitement: 'Skip to content',
@@ -64,8 +64,8 @@ window.TRADUCTIONS_EN = {
   // Compétences
   'comp-sur': '02 · Skills',
   'comp-titre': 'Four fields, <span class="degrade">one passion</span>',
-  'comp1-titre': 'Web development',
-  comp1: 'Modern, fast, mobile-friendly interfaces, and the server behind them.',
+  'comp1-titre': 'Full stack web development',
+  comp1: 'Front-end and back-end: modern, mobile-friendly interfaces, plus the API and database behind them.',
   'comp2-titre': 'Systems & maintenance',
   comp2: 'Installing, troubleshooting and maintaining computers and devices, on Windows and Linux.',
   'puce-terminal': 'Command line',
