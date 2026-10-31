@@ -34,7 +34,7 @@ window.TRADUCTIONS_EN = {
 
   // Chiffres
   'chiffre-certifs': 'international certifications',
-  'chiffre-projets': 'real projects in production',
+  'chiffre-projets': 'real-world projects built',
   'chiffre-lignes': 'lines of code for NOVAIA',
   'chiffre-tests': 'automated tests passing',
 
@@ -83,7 +83,7 @@ window.TRADUCTIONS_EN = {
   // Projets
   'projets-sur': '03 · Projects',
   'projets-titre': '<span class="degrade">Real-world</span> achievements',
-  'novaia-type': 'Web application · Flagship project',
+  'novaia-type': 'Web application · In development · Demo available',
   'novaia-sous': 'my intelligent personal assistant',
   'novaia-slogan': '“Your assistant. Your memory. Your identity. Your control.”',
   agrandir: 'Enlarge the screenshot',
@@ -106,7 +106,10 @@ window.TRADUCTIONS_EN = {
   f9: 'Data export and account deletion (GDPR)',
   f10: 'Automatic backups and restore',
   'novaia-ia':
-    '<strong>Where is the AI?</strong> The artificial intelligence engine is being integrated. The whole application around it (accounts, memory, security, payments, administration) is finished and tested.',
+    '<strong>🚧 Work in progress.</strong> NOVAIA is not open to the public yet: what you see here is a <strong>demo</strong>. Accounts, memory, security, plans and administration work and are tested, but the assistant\'s answers are still simulated and payments are fictitious, until the real artificial intelligence engine is integrated.',
+  'demo-bouton': 'Request access to the live demo',
+  'demo-lien': 'mailto:prowinix5@gmail.com?subject=Access%20to%20the%20NOVAIA%20demo',
+  'demo-texte': 'On request, I open temporary access so you can try NOVAIA yourself.',
   'secu-titre': 'Security at the heart of the project',
   's1-t': 'Hashed passwords',
   s1: 'scrypt algorithm: not even the administrator can read them.',
@@ -171,9 +174,9 @@ window.TRADUCTIONS_EN = {
   'e6-type': 'Network project · Nkoabang · 2025',
   'e6-titre': 'Deploying the Sharingan Wi-Fi network',
   e6: 'A live neighbourhood network: Wi-Fi coverage, cabling, captive portal and plans.',
-  'e7-type': 'Personal project · 2026',
+  'e7-type': 'Personal project · 2026 · Ongoing',
   'e7-titre': 'Building NOVAIA',
-  e7: 'From design (25 foundations) to going online: accounts, memory, security, payments, administration.',
+  e7: 'From design (25 foundations) to a working demo: accounts, memory, security, plans, administration. Next step: the real AI engine.',
 
   // Contact
   'contact-sur': '06 · Contact',
