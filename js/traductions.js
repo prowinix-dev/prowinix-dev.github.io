@@ -106,10 +106,9 @@ window.TRADUCTIONS_EN = {
   f9: 'Data export and account deletion (GDPR)',
   f10: 'Automatic backups and restore',
   'novaia-ia':
-    '<strong>🚧 Work in progress.</strong> NOVAIA is not open to the public yet: what you see here is a <strong>demo</strong>. Accounts, memory, security, plans and administration work and are tested, but the assistant\'s answers are still simulated and payments are fictitious, until the real artificial intelligence engine is integrated.',
-  'demo-bouton': 'Request access to the live demo',
-  'demo-lien': 'mailto:prowinix5@gmail.com?subject=Access%20to%20the%20NOVAIA%20demo',
-  'demo-texte': 'On request, I open temporary access so you can try NOVAIA yourself.',
+    '<strong>🚧 Work in progress.</strong> NOVAIA is not open to the public yet: what you see here is a <strong>demo</strong>. Accounts, memory, security, plans and administration work and are tested, and the assistant answers with a <strong>real artificial intelligence</strong> (Google Gemini). Payments are still fictitious.',
+  'demo-bouton': 'Try the live demo',
+  'demo-texte': 'Available when my demo server is on. Create a test account with a password you do not use anywhere else. Link down? <a href="mailto:prowinix5@gmail.com?subject=NOVAIA%20demo%20access">Email me</a>.',
   'secu-titre': 'Security at the heart of the project',
   's1-t': 'Hashed passwords',
   s1: 'scrypt algorithm: not even the administrator can read them.',
@@ -122,7 +121,7 @@ window.TRADUCTIONS_EN = {
   'part-sur': 'Partnerships',
   'part-titre': "Supporting NOVAIA's next stage",
   'part-p':
-    'NOVAIA is entering a new phase: integrating the artificial intelligence engine, hosting it reliably and opening it to the public. I am open to conversations with <strong>companies, incubators, investors or mentors</strong> who would like to support this stage.',
+    'NOVAIA is entering a new phase: strengthening its artificial intelligence, hosting it reliably and opening it to the public. I am open to conversations with <strong>companies, incubators, investors or mentors</strong> who would like to support this stage.',
   'part-1': 'AI integration',
   'part-2': 'Hosting and scaling',
   'part-3': 'Launch in Cameroon and beyond',
