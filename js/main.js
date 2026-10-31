@@ -62,7 +62,8 @@ function appliquerLangue(nouvelle) {
   } catch {}
 }
 
-// Langue de départ : ?lang=en dans l'adresse, sinon le dernier choix, sinon la langue du navigateur
+// Langue de départ : ?lang=en dans l'adresse, sinon le dernier choix, sinon le français
+// (l'anglais seulement si le navigateur est réglé en anglais)
 function langueDeDepart() {
   const demandee = new URLSearchParams(location.search).get('lang');
   if (demandee === 'fr' || demandee === 'en') return demandee;
@@ -70,7 +71,7 @@ function langueDeDepart() {
     const memorisee = localStorage.getItem('langue');
     if (memorisee === 'fr' || memorisee === 'en') return memorisee;
   } catch {}
-  return (navigator.language || 'fr').toLowerCase().startsWith('fr') ? 'fr' : 'en';
+  return (navigator.language || 'fr').toLowerCase().startsWith('en') ? 'en' : 'fr';
 }
 
 $('.langue').addEventListener('click', () => appliquerLangue(langue === 'fr' ? 'en' : 'fr'));

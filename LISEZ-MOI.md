@@ -28,7 +28,7 @@ Double-clique sur `index.html` : il s'ouvre dans ton navigateur.
 - Chaque texte traduisible porte une étiquette, par exemple `data-i18n="dispo"`. La traduction anglaise se trouve dans `traductions.js`, à la ligne `dispo: '…'`.
 - **Pour modifier un texte**, change-le **aux deux endroits** (français et anglais).
 - **Pour ajouter un texte**, mets-lui une nouvelle étiquette `data-i18n="nouveau-nom"` dans `index.html`, puis ajoute `'nouveau-nom': 'English text',` dans `traductions.js`.
-- Au premier passage, le site choisit la langue du navigateur du visiteur. Le bouton **FR / EN** permet de changer, et le choix est retenu.
+- Au premier passage, le site s'affiche **en français**, sauf si le navigateur du visiteur est réglé en anglais. Le bouton **FR / EN** permet de changer, et le choix est retenu.
 - Pour envoyer directement la version anglaise, ajoute `?lang=en` à la fin de l'adresse (par exemple `https://ton-pseudo.github.io/?lang=en`).
 
 ## La vidéo de NOVAIA
