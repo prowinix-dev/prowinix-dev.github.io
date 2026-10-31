@@ -119,7 +119,16 @@ window.TRADUCTIONS_EN = {
   s3: 'Rate limiting, Content-Security-Policy, httpOnly and secure cookies.',
   's4-t': 'Automatically tested',
   s4: '15 test files, 169 checks, run on a separate database.',
-  'note-code': 'Source code shown on request, during an interview.',
+  'part-sur': 'Partnerships',
+  'part-titre': "Supporting NOVAIA's next stage",
+  'part-p':
+    'NOVAIA is entering a new phase: integrating the artificial intelligence engine, hosting it reliably and opening it to the public. I am open to conversations with <strong>companies, incubators, investors or mentors</strong> who would like to support this stage.',
+  'part-1': 'AI integration',
+  'part-2': 'Hosting and scaling',
+  'part-3': 'Launch in Cameroon and beyond',
+  'part-bouton': 'Discuss a partnership',
+  'part-lien': 'mailto:prowinix5@gmail.com?subject=NOVAIA%20partnership',
+  'note-code':'Source code shown on request, during an interview.',
 
   'sharingan-type': 'Network · Nkoabang, Yaoundé · Live',
   'sharingan-sous': 'a neighbourhood Wi-Fi network',

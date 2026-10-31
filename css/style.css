@@ -243,6 +243,16 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .carte-sec strong { display: block; font-family: var(--titre); font-size: 1.05rem; margin-bottom: 6px; }
 .carte-sec p { color: var(--texte-doux); font-size: 0.9rem; }
 .note-code { margin-top: 22px; color: var(--texte-doux); font-size: 0.9rem; font-style: italic; }
+.partenariat {
+  margin-top: 40px; padding: 28px 30px; border-radius: 20px; display: flex; align-items: center; justify-content: space-between; gap: 24px 40px; flex-wrap: wrap;
+  background: linear-gradient(120deg, rgba(20, 200, 180, 0.09), rgba(59, 142, 234, 0.06) 60%, transparent); border: 1px solid rgba(20, 200, 180, 0.3);
+}
+.partenariat-texte { flex: 1 1 520px; }
+.partenariat .sur-titre { margin-bottom: 8px; }
+.partenariat h4 { font-family: var(--titre); font-size: 1.35rem; margin-bottom: 10px; }
+.partenariat-texte > p { color: var(--texte-doux); margin-bottom: 16px; max-width: 720px; }
+.partenariat-texte strong { color: var(--texte); }
+.partenariat .bouton { flex-shrink: 0; }
 
 /* ---------- Blocs de projets ---------- */
 .bloc-projet + .bloc-projet { margin-top: 110px; padding-top: 80px; border-top: 1px solid var(--bord); }
@@ -385,6 +395,8 @@ a.contact-valeur:hover { color: var(--turquoise); }
   .apropos { grid-template-columns: 1fr; gap: 32px; }
   .section { padding-top: 90px; }
   .contact { padding: 44px 18px; }
+  .partenariat { padding: 22px 18px; }
+  .partenariat .bouton { width: 100%; justify-content: center; }
 }
 @media (max-width: 520px) {
   .grille-coulisses { grid-template-columns: 1fr 1fr; }
