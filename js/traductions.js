@@ -94,10 +94,10 @@ window.TRADUCTIONS_EN = {
   'video-titre': 'Video demo · 56 seconds (in French)',
   'video-aria': 'NOVAIA demo video',
   'novaia-p':
-    'A platform where everyone has <strong>their own assistant</strong>: you give it a name, a personality and a language, and it only remembers what you allow it to. Designed around <strong>25 foundations</strong> (mission, identity, security, memory, payments, administration…) then built step by step.',
+    'A platform where everyone has <strong>their own assistant</strong>: you give it a name, a personality and a language, and it automatically remembers your exchanges, under your control. Designed around <strong>25 foundations</strong> (mission, identity, security, memory, payments, administration…) then built step by step.',
   f1: 'Chat with conversation history',
   f2: 'Customisable assistant (name, personality, language)',
-  f3: 'Consent-based memory, category by category',
+  f3: 'Automatic conversation memory that anyone can turn off',
   f4: 'Automatic moderation and masking of bank details',
   f5: 'Files and images, checked by their actual content',
   f6: 'Natural-language reminders (“remind me tomorrow at 9am…”)',
@@ -184,7 +184,7 @@ window.TRADUCTIONS_EN = {
   e6: 'A live neighbourhood network: Wi-Fi coverage, cabling, captive portal and plans.',
   'e7-type': 'Personal project · 2026 · Ongoing',
   'e7-titre': 'Building NOVAIA',
-  e7: 'From design (25 foundations) to a working demo: accounts, memory, security, plans, administration. Next step: the real AI engine.',
+  e7: 'From design (25 foundations) to a working demo: accounts, memory, real AI, security, plans, administration.',
 
   // Contact
   'contact-sur': '06 · Contact',
