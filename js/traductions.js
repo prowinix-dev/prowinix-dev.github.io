@@ -193,7 +193,7 @@ window.TRADUCTIONS_EN = {
   copier: 'Copy',
   'copier-aria': 'Copy the email address',
   'copie-ok': 'Email address copied ✓',
-  'wa-ecrire': 'Message me on WhatsApp',
+  'wa-label': 'WhatsApp · Phone',
   'linkedin-voir': 'View my profile',
   localisation: 'Location',
   lieu: 'Yaoundé, Cameroon',

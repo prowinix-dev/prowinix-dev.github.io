@@ -51,7 +51,7 @@ function appliquerLangue(nouvelle) {
   if (active) $('#capture-principale').alt = active.dataset[anglais ? 'altEn' : 'altFr'];
   // Message WhatsApp prérempli
   const whatsapp = $('.contact-whatsapp');
-  whatsapp.href = `https://wa.me/237687473564?text=${encodeURIComponent(whatsapp.dataset[anglais ? 'waEn' : 'waFr'])}`;
+  whatsapp.href = `https://wa.me/237687453764?text=${encodeURIComponent(whatsapp.dataset[anglais ? 'waEn' : 'waFr'])}`;
   // Bouton de langue : la langue active est mise en avant
   $('.langue').classList.toggle('en', anglais);
   // Les métiers qui s'écrivent tout seuls
