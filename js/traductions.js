@@ -105,6 +105,7 @@ window.TRADUCTIONS_EN = {
   f8: 'Admin dashboard with no access to private content',
   f9: 'Data export and account deletion (GDPR)',
   f10: 'Automatic backups and restore',
+  f11: 'Installable app for phones and computers (PWA)',
   'novaia-ia':
     '<strong>🚧 Work in progress.</strong> NOVAIA is not open to the public yet: what you see here is a <strong>demo</strong>. Accounts, memory, security, plans and administration work and are tested, and the assistant answers with a <strong>real artificial intelligence</strong> (Google Gemini). Payments are still fictitious.',
   'demo-bouton': 'Try the live demo',
