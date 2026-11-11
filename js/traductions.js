@@ -91,7 +91,7 @@ window.TRADUCTIONS_EN = {
   'v-chat': 'Chat',
   'v-memoire': 'Memory',
   'v-connexion': 'Sign in',
-  'video-titre': 'Video demo · 56 seconds (in French)',
+  'video-titre': 'Video demo · 1 min 14 s (in French)',
   'video-aria': 'NOVAIA demo video',
   'novaia-p':
     'A platform where everyone has <strong>their own assistant</strong>: you give it a name, a personality and a language, and it automatically remembers your exchanges, under your control. Designed around <strong>25 foundations</strong> (mission, identity, security, memory, payments, administration…) then built step by step.',
