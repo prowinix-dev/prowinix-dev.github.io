@@ -285,3 +285,4 @@ $('#annee').textContent = new Date().getFullYear();
 
 // ---------- Démarrage ----------
 appliquerLangue(langueDeDepart());
+document.documentElement.classList.add('pret');

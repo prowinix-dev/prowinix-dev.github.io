@@ -21,6 +21,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <script>
+    // Les animations d'apparition ne servent que si main.js fonctionne : sinon, on montre tout au bout de 2,5 s
+    document.documentElement.classList.add('js');
+    setTimeout(function () { if (!document.documentElement.classList.contains('pret')) document.documentElement.classList.remove('js'); }, 2500);
+  </script>
 </head>
 <body>
   <a class="lien-evitement" href="#contenu" data-i18n="evitement">Aller au contenu</a>

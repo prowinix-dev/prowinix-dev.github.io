@@ -49,14 +49,16 @@ button { font: inherit; color: inherit; cursor: pointer; }
 
 /* ---------- Fond animé ---------- */
 .fond { position: fixed; inset: 0; z-index: -2; overflow: hidden; pointer-events: none; }
-.orbe { position: absolute; border-radius: 50%; filter: blur(90px); opacity: 0.35; animation: flotte 22s ease-in-out infinite alternate; }
-.orbe-1 { width: 520px; height: 520px; background: #14c8b4; top: -160px; left: -120px; }
-.orbe-2 { width: 460px; height: 460px; background: #1f5fd1; top: 30%; right: -160px; animation-delay: -7s; }
-.orbe-3 { width: 380px; height: 380px; background: #7c6cf2; bottom: -140px; left: 30%; opacity: 0.22; animation-delay: -14s; }
+/* Des dégradés plutôt qu'un flou (filter: blur) : même effet, mais Safari sur iPhone ne sature plus */
+.orbe { position: absolute; border-radius: 50%; opacity: 0.35; animation: flotte 22s ease-in-out infinite alternate; }
+.orbe-1 { width: 760px; height: 760px; background: radial-gradient(circle, #14c8b4 0%, rgba(20, 200, 180, 0) 68%); top: -160px; left: -120px; }
+.orbe-2 { width: 680px; height: 680px; background: radial-gradient(circle, #1f5fd1 0%, rgba(31, 95, 209, 0) 68%); top: 30%; right: -160px; animation-delay: -7s; }
+.orbe-3 { width: 580px; height: 580px; background: radial-gradient(circle, #7c6cf2 0%, rgba(124, 108, 242, 0) 68%); bottom: -140px; left: 30%; opacity: 0.22; animation-delay: -14s; }
 .grille {
   position: absolute; inset: 0;
   background-image: linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
   background-size: 64px 64px;
+  -webkit-mask-image: radial-gradient(ellipse at 50% 30%, #000 20%, transparent 75%);
   mask-image: radial-gradient(ellipse at 50% 30%, #000 20%, transparent 75%);
 }
 @keyframes flotte {
@@ -72,7 +74,7 @@ button { font: inherit; color: inherit; cursor: pointer; }
 
 /* ---------- Navigation ---------- */
 .entete { position: fixed; top: 0; left: 0; right: 0; z-index: 50; transition: background 0.3s, border-color 0.3s; border-bottom: 1px solid transparent; }
-.entete.defile { background: rgba(6, 10, 20, 0.72); backdrop-filter: blur(14px); border-bottom-color: var(--bord); }
+.entete.defile { background: rgba(6, 10, 20, 0.72); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); border-bottom-color: var(--bord); }
 .nav { display: flex; align-items: center; justify-content: space-between; height: 72px; }
 .logo { display: flex; align-items: center; gap: 10px; font-family: var(--titre); font-weight: 700; font-size: 1.25rem; }
 .logo-marque {
@@ -143,7 +145,7 @@ button { font: inherit; color: inherit; cursor: pointer; }
 @keyframes tourne { to { transform: rotate(360deg); } }
 .etiquette-flottante {
   position: absolute; z-index: 2; display: inline-flex; align-items: center; gap: 6px; padding: 8px 14px; border-radius: 12px;
-  background: rgba(10, 18, 34, 0.85); border: 1px solid var(--bord); backdrop-filter: blur(10px);
+  background: rgba(10, 18, 34, 0.85); border: 1px solid var(--bord); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
   font-size: 0.85rem; font-weight: 600; box-shadow: var(--ombre); animation: monte 5s ease-in-out infinite;
   white-space: nowrap;
 }
@@ -345,7 +347,7 @@ a.contact-valeur:hover { color: var(--turquoise); }
 
 /* ---------- Visionneuse et toast ---------- */
 .visionneuse { width: min(1200px, 94vw); padding: 0; border: 1px solid var(--bord); border-radius: 14px; background: #0d1526; overflow: hidden; }
-.visionneuse::backdrop { background: rgba(3, 6, 12, 0.85); backdrop-filter: blur(6px); }
+.visionneuse::backdrop { background: rgba(3, 6, 12, 0.85); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
 .visionneuse img { width: 100%; height: auto; }
 .visionneuse-fermer { position: absolute; top: 10px; right: 10px; width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--bord); background: rgba(6, 10, 20, 0.85); font-size: 1.4rem; line-height: 1; }
 .toast {
@@ -364,8 +366,9 @@ a.contact-valeur:hover { color: var(--turquoise); }
 .hero-texte .apparait:nth-child(7) { animation-delay: 0.6s; }
 .hero-visuel.apparait { animation-delay: 0.3s; }
 @keyframes arrive { to { opacity: 1; transform: none; } }
-.revele { opacity: 0; transform: translateY(32px); transition: opacity 0.8s cubic-bezier(0.2, 0.7, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1); transition-delay: var(--delai, 0s); }
-.revele.vu { opacity: 1; transform: none; }
+/* Caché seulement si le JavaScript marche (classe js) : sinon le texte reste visible */
+.js .revele { opacity: 0; transform: translateY(32px); transition: opacity 0.8s cubic-bezier(0.2, 0.7, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1); transition-delay: var(--delai, 0s); }
+.js .revele.vu { opacity: 1; transform: none; }
 
 /* ---------- Tablette ---------- */
 @media (max-width: 1000px) {
@@ -383,7 +386,7 @@ a.contact-valeur:hover { color: var(--turquoise); }
   .burger { display: block; }
   .menu {
     position: fixed; inset: 72px 0 auto 0; flex-direction: column; align-items: stretch; gap: 4px; padding: 16px;
-    background: rgba(6, 10, 20, 0.96); backdrop-filter: blur(14px); border-bottom: 1px solid var(--bord);
+    background: rgba(6, 10, 20, 0.96); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); border-bottom: 1px solid var(--bord);
     transform: translateY(-120%); transition: transform 0.35s; visibility: hidden;
   }
   .menu.ouvert { transform: none; visibility: visible; }
