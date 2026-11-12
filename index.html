@@ -52,9 +52,9 @@
           <li><a href="#parcours" data-i18n="nav-parcours">Parcours</a></li>
           <li><a href="#contact" class="bouton bouton-petit" data-i18n="nav-contact">Me contacter</a></li>
         </ul>
-        <button class="langue" type="button" data-i18n-attr="aria-label:langue-aria" aria-label="Read in English">
-          <span class="langue-fr">FR</span><span class="langue-en">EN</span>
-        </button>
+        <div class="langue" role="group" data-i18n-attr="aria-label:langue-aria" aria-label="Langue">
+          <button type="button" data-langue="fr" lang="fr" aria-label="Français" aria-pressed="true">FR</button><button type="button" data-langue="en" lang="en" aria-label="English" aria-pressed="false">EN</button><button type="button" data-langue="es" lang="es" aria-label="Español" aria-pressed="false">ES</button>
+        </div>
         <button class="burger" data-i18n-attr="aria-label:menu-ouvrir" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu">
           <span></span><span></span><span></span>
         </button>
@@ -72,7 +72,8 @@
         <p class="hero-role apparait" aria-live="polite">
           <span class="chevron">&gt;</span> <span class="role-tape"
             data-roles-fr='["Développeur Full Stack Junior","Technicien maintenance informatique","Administrateur réseau","Passionné d&apos;intelligence artificielle"]'
-            data-roles-en='["Junior Full Stack Developer","IT maintenance technician","Network administrator","Artificial intelligence enthusiast"]'>Développeur Full Stack Junior</span><span class="curseur" aria-hidden="true">_</span>
+            data-roles-en='["Junior Full Stack Developer","IT maintenance technician","Network administrator","Artificial intelligence enthusiast"]'
+            data-roles-es='["Desarrollador Full Stack Junior","Técnico de mantenimiento informático","Administrador de redes","Apasionado de la inteligencia artificial"]'>Développeur Full Stack Junior</span><span class="curseur" aria-hidden="true">_</span>
         </p>
         <p class="hero-phrase apparait" data-i18n="phrase">
           L'informatique n'est pas seulement ma passion, <strong>c'est mon univers</strong> : j'aime comprendre, créer,
@@ -106,8 +107,8 @@
     <section id="chiffres" class="chiffres conteneur">
       <div class="chiffre revele"><strong data-compte="4">0</strong><span data-i18n="chiffre-certifs">certifications internationales</span></div>
       <div class="chiffre revele"><strong data-compte="2">0</strong><span data-i18n="chiffre-projets">projets concrets réalisés</span></div>
-      <div class="chiffre revele"><strong data-compte="7400" data-suffixe="+">0</strong><span data-i18n="chiffre-lignes">lignes de code pour NOVAIA</span></div>
-      <div class="chiffre revele"><strong data-compte="169">0</strong><span data-i18n="chiffre-tests">tests automatiques qui passent</span></div>
+      <div class="chiffre revele"><strong data-compte="9900" data-suffixe="+">0</strong><span data-i18n="chiffre-lignes">lignes de code pour NOVAIA</span></div>
+      <div class="chiffre revele"><strong data-compte="281">0</strong><span data-i18n="chiffre-tests">tests automatiques qui passent</span></div>
     </section>
 
     <!-- ========== À PROPOS ========== -->
@@ -234,11 +235,11 @@
               </button>
             </div>
             <div class="vignettes" role="tablist" data-i18n-attr="aria-label:vignettes-aria" aria-label="Captures d'écran de NOVAIA">
-              <button class="vignette active" role="tab" aria-selected="true" data-src="images/novaia-chat.webp" data-alt-fr="NOVAIA : une conversation avec l'assistant Nova" data-alt-en="NOVAIA: a conversation with the Nova assistant"><img src="images/novaia-chat.webp" alt="" loading="lazy"><span data-i18n="v-chat">Chat</span></button>
-              <button class="vignette" role="tab" aria-selected="false" data-src="images/novaia-memoire.webp" data-alt-fr="NOVAIA : la mémoire personnelle" data-alt-en="NOVAIA: personal memory"><img src="images/novaia-memoire.webp" alt="" loading="lazy"><span data-i18n="v-memoire">Mémoire</span></button>
-              <button class="vignette" role="tab" aria-selected="false" data-src="images/novaia-offre.webp" data-alt-fr="NOVAIA : l'offre Gratuit / Premium" data-alt-en="NOVAIA: Free / Premium plans"><img src="images/novaia-offre.webp" alt="" loading="lazy"><span>Premium</span></button>
-              <button class="vignette" role="tab" aria-selected="false" data-src="images/novaia-admin.webp" data-alt-fr="NOVAIA : le tableau de bord administrateur" data-alt-en="NOVAIA: the admin dashboard"><img src="images/novaia-admin.webp" alt="" loading="lazy"><span>Admin</span></button>
-              <button class="vignette" role="tab" aria-selected="false" data-src="images/novaia-connexion.webp" data-alt-fr="NOVAIA : l'écran de connexion" data-alt-en="NOVAIA: the sign-in screen"><img src="images/novaia-connexion.webp" alt="" loading="lazy"><span data-i18n="v-connexion">Connexion</span></button>
+              <button class="vignette active" role="tab" aria-selected="true" data-src="images/novaia-chat.webp" data-alt-fr="NOVAIA : une conversation avec l'assistant Nova" data-alt-en="NOVAIA: a conversation with the Nova assistant" data-alt-es="NOVAIA: una conversación con el asistente Nova"><img src="images/novaia-chat.webp" alt="" loading="lazy"><span data-i18n="v-chat">Chat</span></button>
+              <button class="vignette" role="tab" aria-selected="false" data-src="images/novaia-memoire.webp" data-alt-fr="NOVAIA : la mémoire personnelle" data-alt-en="NOVAIA: personal memory" data-alt-es="NOVAIA: la memoria personal"><img src="images/novaia-memoire.webp" alt="" loading="lazy"><span data-i18n="v-memoire">Mémoire</span></button>
+              <button class="vignette" role="tab" aria-selected="false" data-src="images/novaia-offre.webp" data-alt-fr="NOVAIA : l'offre Gratuit / Premium" data-alt-en="NOVAIA: Free / Premium plans" data-alt-es="NOVAIA: planes Gratuito / Premium"><img src="images/novaia-offre.webp" alt="" loading="lazy"><span>Premium</span></button>
+              <button class="vignette" role="tab" aria-selected="false" data-src="images/novaia-admin.webp" data-alt-fr="NOVAIA : le tableau de bord administrateur" data-alt-en="NOVAIA: the admin dashboard" data-alt-es="NOVAIA: el panel de administración"><img src="images/novaia-admin.webp" alt="" loading="lazy"><span>Admin</span></button>
+              <button class="vignette" role="tab" aria-selected="false" data-src="images/novaia-connexion.webp" data-alt-fr="NOVAIA : l'écran de connexion" data-alt-en="NOVAIA: the sign-in screen" data-alt-es="NOVAIA: la pantalla de inicio de sesión"><img src="images/novaia-connexion.webp" alt="" loading="lazy"><span data-i18n="v-connexion">Connexion</span></button>
             </div>
             <div class="video-demo">
               <p class="video-titre"><span class="video-pastille" aria-hidden="true">▶</span> <span data-i18n="video-titre">La démo en vidéo · 1 min 14 s</span></p>
@@ -269,6 +270,8 @@
               <li class="revele"><span aria-hidden="true">🔐</span> <span data-i18n="f9">Export des données et suppression du compte (RGPD)</span></li>
               <li class="revele"><span aria-hidden="true">💾</span> <span data-i18n="f10">Sauvegardes automatiques et restauration</span></li>
               <li class="revele"><span aria-hidden="true">📲</span> <span data-i18n="f11">Application installable sur téléphone et ordinateur (PWA)</span></li>
+              <li class="revele"><span aria-hidden="true">📷</span> <span data-i18n="f12">Photos et PDF lus par l'IA, réponses lues à voix haute</span></li>
+              <li class="revele"><span aria-hidden="true">🎁</span> <span data-i18n="f13">Recherche dans les conversations et parrainage</span></li>
             </ul>
             <p class="encart revele" data-i18n="novaia-ia">
               <strong>🚧 Projet en cours de développement.</strong> NOVAIA n'est pas encore ouvert au public : ce que vous
@@ -277,7 +280,10 @@
               artificielle</strong> (Gemini de Google). Les paiements, eux, sont encore fictifs.
             </p>
             <div class="demande-demo revele">
-              <a class="bouton" href="https://novaia.tail4b27c1.ts.net" target="_blank" rel="noopener"><span aria-hidden="true">🚀</span> <span data-i18n="demo-bouton">Essayer la démo en direct</span></a>
+              <div class="boutons-demo">
+                <a class="bouton" href="https://novaia.tail4b27c1.ts.net" target="_blank" rel="noopener"><span aria-hidden="true">🚀</span> <span data-i18n="demo-bouton">Essayer la démo en direct</span></a>
+                <a class="bouton bouton-contour" href="etude-de-cas-novaia.html"><span aria-hidden="true">📖</span> <span data-i18n="etude-bouton">Lire l'étude de cas</span></a>
+              </div>
               <p data-i18n="demo-texte">
                 Disponible quand mon serveur de démonstration est allumé. Créez un compte de test avec un mot de passe que
                 vous n'utilisez nulle part ailleurs. Lien indisponible ?
@@ -294,7 +300,7 @@
             <div class="carte-sec revele"><strong data-i18n="s1-t">Mots de passe hachés</strong><p data-i18n="s1">Algorithme scrypt : même l'administrateur ne peut pas les relire.</p></div>
             <div class="carte-sec revele"><strong data-i18n="s2-t">Données isolées</strong><p data-i18n="s2">Chaque requête vérifie le propriétaire : personne ne voit les données d'un autre.</p></div>
             <div class="carte-sec revele"><strong data-i18n="s3-t">Anti-abus</strong><p data-i18n="s3">Limiteur de tentatives, Content-Security-Policy, cookies httpOnly et sécurisés.</p></div>
-            <div class="carte-sec revele"><strong data-i18n="s4-t">Testé automatiquement</strong><p data-i18n="s4">15 fichiers de tests, 169 vérifications, sur une base de données séparée.</p></div>
+            <div class="carte-sec revele"><strong data-i18n="s4-t">Testé automatiquement</strong><p data-i18n="s4">19 fichiers de tests, 281 vérifications, sur une base de données séparée.</p></div>
           </div>
         </div>
         <p class="note-code revele" data-i18n="note-code">Code source présenté sur demande, lors d'un entretien.</p>
@@ -461,7 +467,7 @@
             </div>
             <button class="copier" data-copie="prowinix5@gmail.com" data-i18n="copier" data-i18n-attr="aria-label:copier-aria" aria-label="Copier l'adresse e-mail">Copier</button>
           </div>
-          <a class="contact-carte contact-whatsapp" data-wa-fr="Bonjour Wilfried, j'ai vu votre portfolio." data-wa-en="Hello Wilfried, I saw your portfolio." href="https://wa.me/237687453764?text=Bonjour%20Wilfried%2C%20j%27ai%20vu%20votre%20portfolio." target="_blank" rel="noopener">
+          <a class="contact-carte contact-whatsapp" data-wa-fr="Bonjour Wilfried, j'ai vu votre portfolio." data-wa-en="Hello Wilfried, I saw your portfolio." data-wa-es="Hola Wilfried, he visto tu portafolio." href="https://wa.me/237687453764?text=Bonjour%20Wilfried%2C%20j%27ai%20vu%20votre%20portfolio." target="_blank" rel="noopener">
             <span class="contact-icone" aria-hidden="true">
               <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.8-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.1.3.7 1.2 1.6 1.9 1.1 1 2 1.3 2.3 1.4.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.3Z"/></svg>
             </span>
@@ -511,6 +517,7 @@
   <div class="toast" role="status" aria-live="polite"></div>
 
   <script src="js/traductions.js"></script>
+  <script src="js/traduccion-es.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

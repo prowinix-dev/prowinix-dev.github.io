@@ -6,10 +6,13 @@ const $ = (s, parent = document) => parent.querySelector(s);
 const $$ = (s, parent = document) => [...parent.querySelectorAll(s)];
 
 // ==========================================================
-// 1. LES LANGUES (français / anglais)
+// 1. LES LANGUES (français / anglais / espagnol)
 // ==========================================================
 // Le français est dans index.html. Au chargement, on le garde de côté pour pouvoir y revenir.
-const EN = window.TRADUCTIONS_EN;
+const TRADUCTIONS = { en: window.TRADUCTIONS_EN, es: window.TRADUCTIONS_ES };
+const LANGUES = ['fr', 'en', 'es'];
+// "altEn", "rolesEs"… : le nom de l'attribut data-* pour la langue active
+const cleData = (prefixe) => prefixe + langue[0].toUpperCase() + langue[1];
 const francais = { textes: new Map(), attributs: new Map() };
 $$('[data-i18n]').forEach((el) => francais.textes.set(el, el.innerHTML));
 $$('[data-i18n-attr]').forEach((el) => {
@@ -29,52 +32,54 @@ const texte = (cle) => window.TEXTES_SCRIPT[langue][cle];
 
 function appliquerLangue(nouvelle) {
   langue = nouvelle;
-  const anglais = langue === 'en';
+  const dico = TRADUCTIONS[langue] || {};
+  const traduit = (cle, francais) => (dico[cle] !== undefined ? dico[cle] : francais);
   document.documentElement.lang = langue;
-  document.title = anglais ? EN['document-titre'] : titreFr;
-  meta.content = anglais ? EN['document-description'] : descriptionFr;
+  document.title = traduit('document-titre', titreFr);
+  meta.content = traduit('document-description', descriptionFr);
 
   // Textes (les traductions sont écrites dans traductions.js : pas de contenu venant de l'extérieur)
   francais.textes.forEach((html, el) => {
     const cle = el.dataset.i18n;
-    el.innerHTML = anglais && EN[cle] !== undefined ? EN[cle] : html;
+    el.innerHTML = traduit(cle, html);
   });
   // Attributs (alt, aria-label…)
   francais.attributs.forEach((valeurs, el) => {
     el.dataset.i18nAttr.split(';').forEach((paire) => {
       const [attribut, cle] = paire.split(':');
-      el.setAttribute(attribut, anglais && EN[cle] !== undefined ? EN[cle] : valeurs[attribut]);
+      el.setAttribute(attribut, traduit(cle, valeurs[attribut]));
     });
   });
   // Galerie de NOVAIA : texte alternatif de la capture affichée
   const active = $('.vignette.active');
-  if (active) $('#capture-principale').alt = active.dataset[anglais ? 'altEn' : 'altFr'];
+  if (active) $('#capture-principale').alt = active.dataset[cleData('alt')];
   // Message WhatsApp prérempli
   const whatsapp = $('.contact-whatsapp');
-  whatsapp.href = `https://wa.me/237687453764?text=${encodeURIComponent(whatsapp.dataset[anglais ? 'waEn' : 'waFr'])}`;
+  whatsapp.href = `https://wa.me/237687453764?text=${encodeURIComponent(whatsapp.dataset[cleData('wa')])}`;
   // Bouton de langue : la langue active est mise en avant
-  $('.langue').classList.toggle('en', anglais);
+  $$('.langue [data-langue]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.langue === langue)));
   // Les métiers qui s'écrivent tout seuls
-  machine.changerRoles(JSON.parse($('.role-tape').dataset[anglais ? 'rolesEn' : 'rolesFr']));
+  machine.changerRoles(JSON.parse($('.role-tape').dataset[cleData('roles')]));
 
   try {
     localStorage.setItem('langue', langue);
   } catch {}
 }
 
-// Langue de départ : ?lang=en dans l'adresse, sinon le dernier choix, sinon le français
-// (l'anglais seulement si le navigateur est réglé en anglais)
+// Langue de départ : ?lang=en (ou es) dans l'adresse, sinon le dernier choix, sinon le français
+// (l'anglais ou l'espagnol seulement si le navigateur est réglé dans cette langue)
 function langueDeDepart() {
   const demandee = new URLSearchParams(location.search).get('lang');
-  if (demandee === 'fr' || demandee === 'en') return demandee;
+  if (LANGUES.includes(demandee)) return demandee;
   try {
     const memorisee = localStorage.getItem('langue');
-    if (memorisee === 'fr' || memorisee === 'en') return memorisee;
+    if (LANGUES.includes(memorisee)) return memorisee;
   } catch {}
-  return (navigator.language || 'fr').toLowerCase().startsWith('en') ? 'en' : 'fr';
+  const navigateur = (navigator.language || 'fr').toLowerCase().slice(0, 2);
+  return LANGUES.includes(navigateur) ? navigateur : 'fr';
 }
 
-$('.langue').addEventListener('click', () => appliquerLangue(langue === 'fr' ? 'en' : 'fr'));
+$$('.langue [data-langue]').forEach((b) => b.addEventListener('click', () => appliquerLangue(b.dataset.langue)));
 
 // ==========================================================
 // 2. LES MÉTIERS QUI S'ÉCRIVENT TOUT SEULS
@@ -190,7 +195,7 @@ const observateurCompteurs = new IntersectionObserver(
       const el = entree.target;
       const cible = Number(el.dataset.compte);
       const suffixe = el.dataset.suffixe || '';
-      const format = new Intl.NumberFormat(langue === 'en' ? 'en-US' : 'fr-FR');
+      const format = new Intl.NumberFormat({ fr: 'fr-FR', en: 'en-US', es: 'es-ES' }[langue]);
       const duree = animationsReduites ? 0 : 1600;
       const debut = performance.now();
       (function avancer(maintenant) {
@@ -243,7 +248,7 @@ vignettes.forEach((vignette) => {
     setTimeout(() => {
       capture.onload = () => capture.classList.remove('change');
       capture.src = vignette.dataset.src;
-      capture.alt = vignette.dataset[langue === 'en' ? 'altEn' : 'altFr'];
+      capture.alt = vignette.dataset[cleData('alt')];
     }, 200);
   });
 });

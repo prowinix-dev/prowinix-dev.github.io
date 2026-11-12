@@ -16,7 +16,7 @@ window.TRADUCTIONS_EN = {
   'nav-projets': 'Projects',
   'nav-parcours': 'Background',
   'nav-contact': 'Contact me',
-  'langue-aria': 'Lire en français',
+  'langue-aria': 'Language',
   'menu-ouvrir': 'Open menu',
   'menu-fermer': 'Close menu',
 
@@ -106,9 +106,12 @@ window.TRADUCTIONS_EN = {
   f9: 'Data export and account deletion (GDPR)',
   f10: 'Automatic backups and restore',
   f11: 'Installable app for phones and computers (PWA)',
+  f12: 'Photos and PDFs read by the AI, answers read aloud',
+  f13: 'Conversation search and referral programme',
   'novaia-ia':
     '<strong>🚧 Work in progress.</strong> NOVAIA is not open to the public yet: what you see here is a <strong>demo</strong>. Accounts, memory, security, plans and administration work and are tested, and the assistant answers with a <strong>real artificial intelligence</strong> (Google Gemini). Payments are still fictitious.',
   'demo-bouton': 'Try the live demo',
+  'etude-bouton': 'Read the case study',
   'demo-texte': 'Available when my demo server is on. Create a test account with a password you do not use anywhere else. Link down? <a href="mailto:prowinix5@gmail.com?subject=NOVAIA%20demo%20access">Email me</a>.',
   'secu-titre': 'Security at the heart of the project',
   's1-t': 'Hashed passwords',
@@ -118,7 +121,7 @@ window.TRADUCTIONS_EN = {
   's3-t': 'Anti-abuse',
   s3: 'Rate limiting, Content-Security-Policy, httpOnly and secure cookies.',
   's4-t': 'Automatically tested',
-  s4: '15 test files, 169 checks, run on a separate database.',
+  s4: '19 test files, 281 checks, run on a separate database.',
   'part-sur': 'Partnerships',
   'part-titre': "Supporting NOVAIA's next stage",
   'part-p':

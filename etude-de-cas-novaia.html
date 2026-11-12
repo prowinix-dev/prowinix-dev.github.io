@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NOVAIA · Étude de cas · Gérard Wilfried BIHINA</title>
+  <meta name="description" content="Étude de cas de NOVAIA, l'assistant personnel intelligent créé par Gérard Wilfried BIHINA (Winix) : le problème, la démarche, les difficultés résolues et les résultats.">
+  <meta name="author" content="Gérard Wilfried BIHINA">
+  <meta property="og:title" content="NOVAIA · Étude de cas">
+  <meta property="og:description" content="Comment j'ai construit un assistant personnel avec une vraie IA, une mémoire contrôlée par l'utilisateur et 281 vérifications automatiques.">
+  <meta property="og:image" content="https://prowinix-dev.github.io/images/apercu-partage.jpg">
+  <meta property="og:url" content="https://prowinix-dev.github.io/etude-de-cas-novaia.html">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://prowinix-dev.github.io/etude-de-cas-novaia.html">
+  <meta name="theme-color" content="#060a14">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Une seule langue visible à la fois (le français par défaut, même sans JavaScript) */
+    [data-l] { display: none; }
+    html[lang="fr"] [data-l="fr"], html[lang="en"] [data-l="en"], html[lang="es"] [data-l="es"] { display: block; }
+    html[lang="fr"] span[data-l="fr"], html[lang="en"] span[data-l="en"], html[lang="es"] span[data-l="es"] { display: inline; }
+
+    .etude-entete { position: sticky; top: 0; z-index: 10; background: rgba(6, 10, 20, 0.85); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid var(--bord); }
+    .etude-entete .nav { display: flex; align-items: center; justify-content: space-between; gap: 12px; height: 64px; }
+    .retour { color: var(--texte-doux); font-size: 0.92rem; font-weight: 500; }
+    .retour:hover { color: var(--texte); }
+    .etude { width: min(860px, 100% - 32px); margin: 0 auto; padding: 56px 0 80px; }
+    .etude h1 { font-size: clamp(2.1rem, 5vw, 3.2rem); margin: 6px 0 16px; }
+    .etude .chapeau { color: var(--texte-doux); font-size: 1.1rem; max-width: 720px; }
+    .etude h2 { font-size: clamp(1.4rem, 3vw, 1.8rem); margin: 56px 0 14px; }
+    .etude h3 { font-size: 1.08rem; margin-bottom: 6px; }
+    .etude p + p { margin-top: 12px; }
+    .etude .texte p, .etude .texte li { color: #cbd6e6; }
+    .etude .liste { display: grid; gap: 8px; margin-top: 12px; }
+    .etude .liste li { padding-left: 22px; position: relative; }
+    .etude .liste li::before { content: ""; position: absolute; left: 4px; top: 0.7em; width: 7px; height: 7px; border-radius: 50%; background: var(--turquoise); }
+    .chiffres-etude { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin-top: 36px; }
+    .chiffres-etude div { padding: 18px; border-radius: var(--rayon); background: var(--surface); border: 1px solid var(--bord); }
+    .chiffres-etude strong { display: block; font-family: var(--titre); font-size: 1.7rem; background: var(--degrade); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .chiffres-etude span { color: var(--texte-doux); font-size: 0.86rem; }
+    .defis { display: grid; gap: 14px; margin-top: 8px; }
+    .defi { padding: 20px 22px; border-radius: var(--rayon); background: linear-gradient(160deg, rgba(20, 200, 180, 0.07), rgba(59, 142, 234, 0.03)); border: 1px solid var(--bord); }
+    .defi p { font-size: 0.95rem; }
+    .defi .solution { margin-top: 8px; }
+    .defi .solution::before { content: "→ "; color: var(--turquoise); font-weight: 600; }
+    .captures { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; margin-top: 18px; }
+    .captures img { border-radius: 12px; border: 1px solid var(--bord); width: 100%; height: auto; }
+    .etude .puces { margin-top: 14px; }
+    .fin-etude { margin-top: 56px; padding: 26px; border-radius: var(--rayon); background: var(--surface); border: 1px solid var(--bord); }
+    .fin-etude .boutons-demo { margin-top: 16px; }
+    @media (max-width: 520px) { .etude { padding-top: 36px; } .retour .long { display: none; } }
+  </style>
+</head>
+<body>
+  <div class="fond" aria-hidden="true">
+    <span class="orbe orbe-1"></span>
+    <span class="orbe orbe-2"></span>
+    <span class="grille"></span>
+  </div>
+
+  <header class="etude-entete">
+    <nav class="nav conteneur">
+      <a class="retour" href="index.html#projets">← <span data-l="fr">Retour <span class="long">au portfolio</span></span><span data-l="en">Back <span class="long">to the portfolio</span></span><span data-l="es">Volver <span class="long">al portafolio</span></span></a>
+      <div class="langue" role="group" aria-label="Langue / Language / Idioma">
+        <button type="button" data-langue="fr" lang="fr" aria-label="Français" aria-pressed="true">FR</button><button type="button" data-langue="en" lang="en" aria-label="English" aria-pressed="false">EN</button><button type="button" data-langue="es" lang="es" aria-label="Español" aria-pressed="false">ES</button>
+      </div>
+    </nav>
+  </header>
+
+  <main class="etude">
+    <!-- ========== FRANÇAIS ========== -->
+    <article data-l="fr" lang="fr">
+      <p class="sur-titre">Étude de cas · 2026</p>
+      <h1>NOVAIA, <span class="degrade">un assistant qui se souvient</span></h1>
+      <p class="chapeau">Comment j'ai conçu et construit seul un assistant personnel avec une vraie intelligence artificielle, une mémoire contrôlée par l'utilisateur, et une sécurité vérifiée par des tests automatiques. Sans budget, sans carte bancaire, depuis Yaoundé.</p>
+
+      <div class="chiffres-etude">
+        <div><strong>40</strong><span>étapes construites et testées</span></div>
+        <div><strong>9 900+</strong><span>lignes de code</span></div>
+        <div><strong>281</strong><span>vérifications automatiques</span></div>
+        <div><strong>&lt; 1 s</strong><span>souvent, pour voir les premiers mots</span></div>
+      </div>
+
+      <div class="texte">
+        <h2>Le problème</h2>
+        <p>Les assistants d'IA connus sont puissants, mais ils <strong>oublient</strong> souvent tout d'une conversation à l'autre, on ne sait pas vraiment ce qu'ils gardent sur nous, et leurs offres payantes demandent une carte bancaire, que beaucoup de gens n'ont pas au Cameroun.</p>
+        <p>Mon objectif : un assistant <strong>personnel</strong> (chacun lui donne un nom, une personnalité, une langue), qui <strong>se souvient</strong> de vos échanges, où l'utilisateur <strong>contrôle</strong> ce qui est gardé, et qui fonctionne avec les moyens de paiement d'ici.</p>
+
+        <h2>Ma démarche</h2>
+        <p>Avant d'écrire une ligne de code, j'ai rédigé <strong>25 fondations</strong> : la mission, l'identité, la sécurité, la mémoire, la confidentialité, les paiements, l'administration… Puis j'ai construit le projet en <strong>40 étapes</strong>. Chaque étape ajoute une fonction, ses tests automatiques, et n'est terminée que quand tous les tests passent.</p>
+        <p>J'ai choisi des outils simples et solides : <strong>Node.js</strong> et <strong>Express</strong> (la seule dépendance), la base de données <strong>SQLite</strong> intégrée à Node, du JavaScript sans framework côté navigateur, et l'API <strong>Gemini</strong> de Google pour l'intelligence artificielle.</p>
+        <ul class="puces"><li>Node.js</li><li>Express</li><li>SQLite</li><li>JavaScript</li><li>HTML / CSS</li><li>Gemini API</li><li>PWA</li><li>Tailscale</li><li>PowerShell</li><li>Git</li></ul>
+
+        <h2>Ce que fait NOVAIA</h2>
+        <ul class="liste">
+          <li>Un chat avec une vraie IA, qui répond en direct, mot après mot.</li>
+          <li>Une mémoire automatique : on peut demander « de quoi avons-nous parlé la semaine passée ? ». Chacun peut la désactiver.</li>
+          <li>Photos et PDF lus par l'IA, micro pour parler, réponses lues à voix haute.</li>
+          <li>Rappels en langage naturel, notifications, recherche dans les conversations.</li>
+          <li>Offres Gratuite / Premium, activation par Mobile Money, parrainage.</li>
+          <li>Tableau de bord administrateur, sans aucun accès aux conversations privées.</li>
+          <li>Export des données, suppression du compte, sauvegardes automatiques.</li>
+          <li>Installable comme une application sur téléphone et ordinateur (PWA).</li>
+        </ul>
+        <div class="captures">
+          <img src="images/novaia-chat.webp" alt="Le chat de NOVAIA" loading="lazy" width="1920" height="1200">
+          <img src="images/novaia-memoire.webp" alt="La mémoire personnelle de NOVAIA" loading="lazy" width="1920" height="1200">
+        </div>
+
+        <h2>Les difficultés, et comment je les ai résolues</h2>
+        <div class="defis">
+          <div class="defi">
+            <h3>Mettre NOVAIA en ligne sans carte bancaire</h3>
+            <p>Les hébergeurs gratuits demandent presque tous une carte bancaire.</p>
+            <p class="solution">Le serveur tourne sur mon ordinateur, et <strong>Tailscale Funnel</strong> lui donne une adresse HTTPS fixe et gratuite. Un « gardien » relance le serveur s'il s'arrête, et tout démarre avec Windows, sans fenêtre.</p>
+          </div>
+          <div class="defi">
+            <h3>Des réponses trop lentes</h3>
+            <p>Mes amis testeurs trouvaient que l'assistant « ramait » : il fallait attendre plusieurs secondes avant de voir la réponse.</p>
+            <p class="solution">La réponse s'affiche maintenant <strong>en continu</strong>, et si le modèle principal tarde, un modèle de secours est interrogé en parallèle : le premier qui répond gagne. Les premiers mots arrivent souvent en moins d'une seconde.</p>
+          </div>
+          <div class="defi">
+            <h3>Une mémoire utile, mais sans danger</h3>
+            <p>Se souvenir de tout pose deux risques : envoyer trop de données à l'IA, et qu'un vieux message contienne des consignes piégées.</p>
+            <p class="solution">Seuls quelques extraits des conversations <strong>sur le même sujet</strong> sont envoyés, avec une taille limitée. Ils sont présentés comme des archives à ne jamais exécuter. Les numéros de carte et mots de passe sont <strong>masqués avant l'envoi</strong>, et l'utilisateur peut tout couper en un clic.</p>
+          </div>
+          <div class="defi">
+            <h3>Encaisser des paiements sans être une entreprise</h3>
+            <p>Les prestataires de paiement demandent des documents d'entreprise.</p>
+            <p class="solution">J'ai créé une <strong>activation manuelle par Mobile Money</strong> : l'administrateur vérifie le paiement et active Premium. Chaque activation est notée dans le journal, et Premium s'arrête seul à la date de fin. Un parrainage permet aussi de gagner du Premium gratuitement.</p>
+          </div>
+          <div class="defi">
+            <h3>Protéger les comptes et les fichiers</h3>
+            <p>Une application ouverte sur Internet est attaquée tôt ou tard.</p>
+            <p class="solution">Mots de passe hachés avec scrypt, données isolées par utilisateur, limiteur de tentatives, Content-Security-Policy, fichiers vérifiés par leur vrai contenu (et pas par leur nom), et 281 vérifications automatiques qui tournent sur une base séparée.</p>
+          </div>
+        </div>
+
+        <h2>Ce que j'ai appris</h2>
+        <p>Écrire les règles avant le code m'a évité beaucoup d'erreurs. Les tests automatiques m'ont permis de changer le projet en profondeur sans tout casser. Et surtout, écouter les vrais utilisateurs (« ça rame », « je veux qu'il se souvienne ») m'a montré quoi améliorer en priorité.</p>
+
+        <h2>Prochaines étapes</h2>
+        <ul class="liste">
+          <li>Un hébergement dans le cloud, pour ne plus dépendre de mon ordinateur.</li>
+          <li>Le paiement Mobile Money automatique, avec un prestataire comme Notch Pay.</li>
+          <li>L'ouverture au public, au Cameroun puis au-delà.</li>
+        </ul>
+      </div>
+
+      <div class="fin-etude">
+        <h3>Envie d'en parler ?</h3>
+        <p class="texte">Je cherche un stage ou un emploi, et je suis ouvert aux partenaires qui voudraient accompagner NOVAIA.</p>
+        <div class="boutons-demo">
+          <a class="bouton" href="https://novaia.tail4b27c1.ts.net" target="_blank" rel="noopener">🚀 Essayer la démo</a>
+          <a class="bouton bouton-contour" href="index.html#contact">Me contacter</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- ========== ENGLISH ========== -->
+    <article data-l="en" lang="en">
+      <p class="sur-titre">Case study · 2026</p>
+      <h1>NOVAIA, <span class="degrade">an assistant that remembers</span></h1>
+      <p class="chapeau">How I designed and built, on my own, a personal assistant with real artificial intelligence, a memory the user controls, and security checked by automated tests. With no budget and no bank card, from Yaoundé.</p>
+
+      <div class="chiffres-etude">
+        <div><strong>40</strong><span>steps built and tested</span></div>
+        <div><strong>9,900+</strong><span>lines of code</span></div>
+        <div><strong>281</strong><span>automated checks</span></div>
+        <div><strong>&lt; 1 s</strong><span>often, to see the first words</span></div>
+      </div>
+
+      <div class="texte">
+        <h2>The problem</h2>
+        <p>Well-known AI assistants are powerful, but they often <strong>forget</strong> everything between conversations, it is hard to know what they keep about us, and their paid plans require a bank card, which many people in Cameroon do not have.</p>
+        <p>My goal: a <strong>personal</strong> assistant (everyone gives it a name, a personality and a language) that <strong>remembers</strong> your exchanges, where the user <strong>controls</strong> what is kept, and that works with local payment methods.</p>
+
+        <h2>My approach</h2>
+        <p>Before writing a single line of code, I wrote <strong>25 foundations</strong>: mission, identity, security, memory, privacy, payments, administration… Then I built the project in <strong>40 steps</strong>. Each step adds a feature and its automated tests, and is only finished when every test passes.</p>
+        <p>I chose simple, solid tools: <strong>Node.js</strong> and <strong>Express</strong> (the only dependency), the <strong>SQLite</strong> database built into Node, framework-free JavaScript in the browser, and Google's <strong>Gemini</strong> API for the artificial intelligence.</p>
+        <ul class="puces"><li>Node.js</li><li>Express</li><li>SQLite</li><li>JavaScript</li><li>HTML / CSS</li><li>Gemini API</li><li>PWA</li><li>Tailscale</li><li>PowerShell</li><li>Git</li></ul>
+
+        <h2>What NOVAIA does</h2>
+        <ul class="liste">
+          <li>A chat with a real AI that answers live, word by word.</li>
+          <li>Automatic memory: you can ask “what did we talk about last week?”. Anyone can turn it off.</li>
+          <li>Photos and PDFs read by the AI, a mic to speak, answers read aloud.</li>
+          <li>Natural-language reminders, notifications, conversation search.</li>
+          <li>Free / Premium plans, Mobile Money activation, referral programme.</li>
+          <li>Admin dashboard with no access whatsoever to private conversations.</li>
+          <li>Data export, account deletion, automatic backups.</li>
+          <li>Installable as an app on phones and computers (PWA).</li>
+        </ul>
+        <div class="captures">
+          <img src="images/novaia-chat.webp" alt="The NOVAIA chat" loading="lazy" width="1920" height="1200">
+          <img src="images/novaia-memoire.webp" alt="NOVAIA's personal memory" loading="lazy" width="1920" height="1200">
+        </div>
+
+        <h2>The challenges, and how I solved them</h2>
+        <div class="defis">
+          <div class="defi">
+            <h3>Putting NOVAIA online without a bank card</h3>
+            <p>Almost every free host asks for a bank card.</p>
+            <p class="solution">The server runs on my computer, and <strong>Tailscale Funnel</strong> gives it a fixed, free HTTPS address. A “watchdog” restarts the server if it stops, and everything starts with Windows, with no window open.</p>
+          </div>
+          <div class="defi">
+            <h3>Answers that were too slow</h3>
+            <p>My tester friends found the assistant sluggish: they waited several seconds before seeing the answer.</p>
+            <p class="solution">Answers now <strong>stream</strong> in, and if the main model is slow, a backup model is queried in parallel: the first to answer wins. The first words often arrive in under a second.</p>
+          </div>
+          <div class="defi">
+            <h3>A memory that helps, safely</h3>
+            <p>Remembering everything carries two risks: sending too much data to the AI, and an old message hiding malicious instructions.</p>
+            <p class="solution">Only a few excerpts from conversations <strong>on the same topic</strong> are sent, with a size limit. They are presented as archives never to be executed. Card numbers and passwords are <strong>masked before sending</strong>, and the user can switch everything off in one click.</p>
+          </div>
+          <div class="defi">
+            <h3>Taking payments without being a company</h3>
+            <p>Payment providers ask for company documents.</p>
+            <p class="solution">I built a <strong>manual Mobile Money activation</strong>: the administrator checks the payment and activates Premium. Every activation is logged, and Premium stops on its own at the end date. A referral programme also lets users earn Premium for free.</p>
+          </div>
+          <div class="defi">
+            <h3>Protecting accounts and files</h3>
+            <p>An application open to the Internet will be attacked sooner or later.</p>
+            <p class="solution">Passwords hashed with scrypt, data isolated per user, rate limiting, Content-Security-Policy, files checked by their actual content (not their name), and 281 automated checks running on a separate database.</p>
+          </div>
+        </div>
+
+        <h2>What I learned</h2>
+        <p>Writing the rules before the code saved me from many mistakes. Automated tests let me change the project deeply without breaking everything. Above all, listening to real users (“it's slow”, “I want it to remember”) showed me what to improve first.</p>
+
+        <h2>Next steps</h2>
+        <ul class="liste">
+          <li>Cloud hosting, so it no longer depends on my computer.</li>
+          <li>Automatic Mobile Money payments, with a provider such as Notch Pay.</li>
+          <li>Opening to the public, in Cameroon and beyond.</li>
+        </ul>
+      </div>
+
+      <div class="fin-etude">
+        <h3>Want to talk?</h3>
+        <p class="texte">I am looking for an internship or a job, and I am open to partners who would like to support NOVAIA.</p>
+        <div class="boutons-demo">
+          <a class="bouton" href="https://novaia.tail4b27c1.ts.net" target="_blank" rel="noopener">🚀 Try the demo</a>
+          <a class="bouton bouton-contour" href="index.html?lang=en#contact">Contact me</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- ========== ESPAÑOL ========== -->
+    <article data-l="es" lang="es">
+      <p class="sur-titre">Caso de estudio · 2026</p>
+      <h1>NOVAIA, <span class="degrade">un asistente que recuerda</span></h1>
+      <p class="chapeau">Cómo diseñé y construí, solo, un asistente personal con inteligencia artificial real, una memoria controlada por el usuario y una seguridad verificada por pruebas automáticas. Sin presupuesto ni tarjeta bancaria, desde Yaundé.</p>
+
+      <div class="chiffres-etude">
+        <div><strong>40</strong><span>etapas construidas y probadas</span></div>
+        <div><strong>9 900+</strong><span>líneas de código</span></div>
+        <div><strong>281</strong><span>verificaciones automáticas</span></div>
+        <div><strong>&lt; 1 s</strong><span>a menudo, para ver las primeras palabras</span></div>
+      </div>
+
+      <div class="texte">
+        <h2>El problema</h2>
+        <p>Los asistentes de IA conocidos son potentes, pero a menudo <strong>olvidan</strong> todo de una conversación a otra, no se sabe bien qué guardan sobre nosotros, y sus planes de pago exigen una tarjeta bancaria, que mucha gente en Camerún no tiene.</p>
+        <p>Mi objetivo: un asistente <strong>personal</strong> (cada uno le da un nombre, una personalidad y un idioma), que <strong>recuerda</strong> vuestras conversaciones, donde el usuario <strong>controla</strong> lo que se guarda, y que funciona con los medios de pago locales.</p>
+
+        <h2>Mi método</h2>
+        <p>Antes de escribir una sola línea de código, redacté <strong>25 fundamentos</strong>: misión, identidad, seguridad, memoria, privacidad, pagos, administración… Después construí el proyecto en <strong>40 etapas</strong>. Cada etapa añade una función y sus pruebas automáticas, y solo termina cuando todas las pruebas pasan.</p>
+        <p>Elegí herramientas sencillas y sólidas: <strong>Node.js</strong> y <strong>Express</strong> (la única dependencia), la base de datos <strong>SQLite</strong> integrada en Node, JavaScript sin framework en el navegador, y la API <strong>Gemini</strong> de Google para la inteligencia artificial.</p>
+        <ul class="puces"><li>Node.js</li><li>Express</li><li>SQLite</li><li>JavaScript</li><li>HTML / CSS</li><li>Gemini API</li><li>PWA</li><li>Tailscale</li><li>PowerShell</li><li>Git</li></ul>
+
+        <h2>Lo que hace NOVAIA</h2>
+        <ul class="liste">
+          <li>Un chat con una IA real, que responde en directo, palabra por palabra.</li>
+          <li>Una memoria automática: se puede preguntar «¿de qué hablamos la semana pasada?». Cada uno puede desactivarla.</li>
+          <li>Fotos y PDF leídos por la IA, micrófono para hablar, respuestas leídas en voz alta.</li>
+          <li>Recordatorios en lenguaje natural, notificaciones, búsqueda en las conversaciones.</li>
+          <li>Planes Gratuito / Premium, activación por Mobile Money, programa de invitación.</li>
+          <li>Panel de administración sin ningún acceso a las conversaciones privadas.</li>
+          <li>Exportación de datos, eliminación de la cuenta, copias de seguridad automáticas.</li>
+          <li>Instalable como aplicación en móvil y ordenador (PWA).</li>
+        </ul>
+        <div class="captures">
+          <img src="images/novaia-chat.webp" alt="El chat de NOVAIA" loading="lazy" width="1920" height="1200">
+          <img src="images/novaia-memoire.webp" alt="La memoria personal de NOVAIA" loading="lazy" width="1920" height="1200">
+        </div>
+
+        <h2>Las dificultades, y cómo las resolví</h2>
+        <div class="defis">
+          <div class="defi">
+            <h3>Publicar NOVAIA sin tarjeta bancaria</h3>
+            <p>Casi todos los alojamientos gratuitos piden una tarjeta bancaria.</p>
+            <p class="solution">El servidor funciona en mi ordenador, y <strong>Tailscale Funnel</strong> le da una dirección HTTPS fija y gratuita. Un «guardián» reinicia el servidor si se detiene, y todo arranca con Windows, sin ventanas.</p>
+          </div>
+          <div class="defi">
+            <h3>Respuestas demasiado lentas</h3>
+            <p>Mis amigos que lo probaban decían que el asistente iba lento: esperaban varios segundos antes de ver la respuesta.</p>
+            <p class="solution">Ahora la respuesta se muestra <strong>en continuo</strong>, y si el modelo principal tarda, se consulta en paralelo un modelo de reserva: gana el primero que responde. Las primeras palabras suelen llegar en menos de un segundo.</p>
+          </div>
+          <div class="defi">
+            <h3>Una memoria útil, pero segura</h3>
+            <p>Recordarlo todo tiene dos riesgos: enviar demasiados datos a la IA, y que un mensaje antiguo esconda instrucciones maliciosas.</p>
+            <p class="solution">Solo se envían algunos extractos de las conversaciones <strong>sobre el mismo tema</strong>, con un tamaño limitado. Se presentan como archivos que nunca deben ejecutarse. Los números de tarjeta y las contraseñas se <strong>ocultan antes del envío</strong>, y el usuario puede desactivarlo todo con un clic.</p>
+          </div>
+          <div class="defi">
+            <h3>Cobrar sin ser una empresa</h3>
+            <p>Los proveedores de pago exigen documentos de empresa.</p>
+            <p class="solution">Creé una <strong>activación manual por Mobile Money</strong>: el administrador verifica el pago y activa Premium. Cada activación queda registrada, y Premium se detiene solo en la fecha de fin. Un programa de invitación también permite ganar Premium gratis.</p>
+          </div>
+          <div class="defi">
+            <h3>Proteger las cuentas y los archivos</h3>
+            <p>Una aplicación abierta a Internet será atacada tarde o temprano.</p>
+            <p class="solution">Contraseñas cifradas con scrypt, datos aislados por usuario, limitador de intentos, Content-Security-Policy, archivos verificados por su contenido real (y no por su nombre), y 281 verificaciones automáticas sobre una base de datos separada.</p>
+          </div>
+        </div>
+
+        <h2>Lo que aprendí</h2>
+        <p>Escribir las reglas antes del código me evitó muchos errores. Las pruebas automáticas me permitieron cambiar el proyecto a fondo sin romperlo todo. Y sobre todo, escuchar a los usuarios reales («va lento», «quiero que recuerde») me mostró qué mejorar primero.</p>
+
+        <h2>Próximos pasos</h2>
+        <ul class="liste">
+          <li>Un alojamiento en la nube, para no depender de mi ordenador.</li>
+          <li>El pago automático por Mobile Money, con un proveedor como Notch Pay.</li>
+          <li>La apertura al público, en Camerún y más allá.</li>
+        </ul>
+      </div>
+
+      <div class="fin-etude">
+        <h3>¿Hablamos?</h3>
+        <p class="texte">Busco prácticas o un empleo, y estoy abierto a socios que quieran acompañar a NOVAIA.</p>
+        <div class="boutons-demo">
+          <a class="bouton" href="https://novaia.tail4b27c1.ts.net" target="_blank" rel="noopener">🚀 Probar la demo</a>
+          <a class="bouton bouton-contour" href="index.html?lang=es#contact">Contáctame</a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <script>
+    // Choix de la langue : le même que sur le portfolio (mémorisé dans ce navigateur)
+    (function () {
+      var LANGUES = ['fr', 'en', 'es'];
+      var TITRES = {
+        fr: 'NOVAIA · Étude de cas · Gérard Wilfried BIHINA',
+        en: 'NOVAIA · Case study · Gérard Wilfried BIHINA',
+        es: 'NOVAIA · Caso de estudio · Gérard Wilfried BIHINA'
+      };
+      var boutons = document.querySelectorAll('.langue [data-langue]');
+      function appliquer(langue) {
+        document.documentElement.lang = langue;
+        document.title = TITRES[langue];
+        for (var i = 0; i < boutons.length; i++) boutons[i].setAttribute('aria-pressed', String(boutons[i].getAttribute('data-langue') === langue));
+        try { localStorage.setItem('langue', langue); } catch (e) {}
+      }
+      var depart = new URLSearchParams(location.search).get('lang');
+      if (LANGUES.indexOf(depart) < 0) { try { depart = localStorage.getItem('langue'); } catch (e) {} }
+      if (LANGUES.indexOf(depart) < 0) { depart = (navigator.language || 'fr').toLowerCase().slice(0, 2); }
+      appliquer(LANGUES.indexOf(depart) < 0 ? 'fr' : depart);
+      for (var i = 0; i < boutons.length; i++) {
+        boutons[i].addEventListener('click', function () { appliquer(this.getAttribute('data-langue')); });
+      }
+    })();
+  </script>
+</body>
+</html>

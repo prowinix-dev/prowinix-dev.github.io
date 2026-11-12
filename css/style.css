@@ -84,14 +84,19 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .logo .point { color: var(--turquoise); }
 .nav-droite { display: flex; align-items: center; gap: 10px; }
 .menu { display: flex; align-items: center; gap: 6px; }
-/* Bouton de langue FR / EN : la langue active est en couleur */
+/* Choix de la langue FR / EN / ES : la langue active est en couleur */
 .langue {
   display: flex; padding: 3px; border-radius: 10px; border: 1px solid var(--bord); background: var(--surface);
   font-family: var(--titre); font-weight: 600; font-size: 0.8rem;
 }
-.langue span { padding: 5px 8px; border-radius: 7px; color: var(--texte-doux); transition: background 0.25s, color 0.25s; }
-.langue:not(.en) .langue-fr, .langue.en .langue-en { background: var(--degrade); color: #04121a; }
+.langue button {
+  padding: 5px 7px; border: 0; border-radius: 7px; background: none; color: var(--texte-doux); font: inherit; cursor: pointer;
+  transition: background 0.25s, color 0.25s;
+}
+.langue button:hover { color: var(--texte); }
+.langue button[aria-pressed="true"] { background: var(--degrade); color: #04121a; }
 .langue:hover { border-color: rgba(20, 200, 180, 0.5); }
+.boutons-demo { display: flex; flex-wrap: wrap; gap: 10px; }
 .menu a:not(.bouton) { padding: 8px 14px; border-radius: 10px; color: var(--texte-doux); font-size: 0.95rem; font-weight: 500; transition: color 0.2s, background 0.2s; }
 .menu a:not(.bouton):hover, .menu a.actif { color: var(--texte); background: var(--surface-forte); }
 .burger { display: none; background: none; border: 0; width: 44px; height: 44px; padding: 10px; }
